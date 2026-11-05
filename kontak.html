@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak &amp; Peta — d'Glorious Crater Kamojang</title>
+  <meta name="description" content="Hubungi d'Glorious Crater Kamojang dan lihat lokasi serta petunjuk arah menuju penginapan alam di kawasan Kamojang.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=optional" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <a class="brand" href="index.html" aria-label="d'Glorious Crater Kamojang">
+        <img class="brand__logo" src="assets/img/logo.png" alt="d'Glorious Crater Kamojang">
+        <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+      </a>
+
+      <span class="header__spacer" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <div class="navpanel-backdrop" id="navBackdrop" hidden></div>
+  <nav class="navpanel" id="primaryNav" aria-label="Menu utama">
+    <div class="navpanel__head">
+      <span class="navpanel__title">Menu</span>
+      <button class="navpanel__close" id="navClose" type="button" aria-label="Tutup menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="nav__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Akomodasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Akomodasi</span>
+      </a></li>
+      <li><a href="kontak.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- Navigasi bawah (layar kecil) -->
+  <nav class="bottombar" aria-label="Menu utama ponsel">
+    <ul class="bottombar__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Akomodasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Akomodasi</span>
+      </a></li>
+      <li><a href="kontak.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero page-hero--media">
+      <div class="page-hero__media"><img data-img="page-kontak" src="assets/img/page-kontak.jpg" alt="Kontak d'Glorious Crater Kamojang"></div>
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Kontak</span></nav>
+        <p class="eyebrow">Kontak &amp; Peta</p>
+        <h1>Hubungi Kami</h1>
+        <p>Kami siap membantu Anda merencanakan kunjungan terbaik ke d'Glorious Crater Kamojang.</p>
+      </div>
+    </section>
+
+    <!-- ================= KONTAK ================= -->
+    <section class="section">
+      <div class="container contact-grid">
+        <div data-reveal>
+          <p class="eyebrow">Informasi Kontak</p>
+          <h2>Mari Terhubung</h2>
+          <p class="lead">Ada pertanyaan mengenai paket, ketersediaan, atau cara menuju lokasi? Sampaikan kepada kami.</p>
+          <div class="info-list mt-2">
+            <div class="info-item">
+              <div class="info-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div>
+                <h4>Lokasi</h4>
+                <p>Mekarwangi, Ibun, Kabupaten Bandung, Jawa Barat 40384</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+              <div>
+                <h4>Telepon / WhatsApp</h4>
+                <p><a data-phone data-phone-text href="#">+62 811-1000-3016</a></p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+              <div>
+                <h4>Email</h4>
+                <p><a data-email data-email-text href="#">dgloriouscraterkamojang@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div>
+                <h4>Jam Operasional</h4>
+                <p>Senin–Jumat 08.00–22.00 WIB · Sabtu–Minggu 07.00–22.00 WIB</p>
+              </div>
+            </div>
+          </div>
+          <p class="mt-2"><a class="btn btn--green" data-wa href="#">Chat via WhatsApp</a></p>
+        </div>
+
+        <div data-reveal data-reveal-delay="1">
+          <form class="form" id="contactForm" novalidate>
+            <div class="form__row">
+              <div class="field">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+              </div>
+              <div class="field">
+                <label for="kontak">Email / No. HP</label>
+                <input type="text" id="kontak" name="kontak" placeholder="Cara menghubungi Anda" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="paket">Paket yang Diminati</label>
+              <select id="paket" name="paket">
+                <option value="Belum tahu / ingin bertanya">Belum tahu / ingin bertanya</option>
+                <option value="Villa Private Pool">Villa Private Pool</option>
+                <option value="Lodge Keluarga">Lodge Keluarga</option>
+                <option value="Glamping">Glamping</option>
+                <option value="Paket Rombongan / Gathering">Paket Rombongan / Gathering</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pesan">Pesan</label>
+              <textarea id="pesan" name="pesan" placeholder="Tulis pertanyaan atau permintaan Anda..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold btn--block">Kirim via WhatsApp</button>
+            <p class="form__note">Dengan mengirim, Anda akan diarahkan ke WhatsApp dengan pesan yang sudah terisi.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PETA ================= -->
+    <section class="section section--sand">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Lokasi</p>
+          <h2>Peta &amp; Petunjuk Arah</h2>
+          <p class="lead">Kawasan Kamojang dapat dicapai dari Bandung maupun Garut melalui jalur pegunungan.</p>
+        </div>
+        <div class="map-frame" data-reveal>
+          <iframe data-maps-embed title="Peta lokasi d'Glorious Crater Kamojang" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="center mt-2" data-reveal>
+          <a class="btn btn--blue" data-maps-directions href="#">Buka Petunjuk Arah</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-banner" data-reveal>
+          <h2>Sampai Jumpa di Kamojang</h2>
+          <p>Pesan menginap Anda sekarang dan ciptakan momen yang tak terlupakan.</p>
+          <div class="cta-banner__actions">
+            <a class="btn btn--gold" data-cta href="#">Lihat Paket</a>
+            <a class="btn btn--ghost" data-cta href="#">Dapatkan Penawaran</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+          <p>Penginapan alam &amp; glamping di ketinggian 1.730 mdpl kawasan Kamojang. LETS CREATE A GLORIOUS MOMENT.</p>
+          <div class="socials">
+            <a data-instagram href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a data-facebook href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.2c0-.9.3-1.5 1.6-1.5H16.5V5.1C16.2 5 15.3 5 14.3 5c-2 0-3.4 1.2-3.4 3.5V11H8.5v3h2.4v7z"/></svg></a>
+            <a data-wa href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 0 1 0 16.4 8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.3c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year></span> d'Glorious Crater Kamojang. Seluruh hak cipta dilindungi.</span>
+        <span>Mekarwangi &middot; Ibun &middot; Bandung &middot; Jawa Barat</span>
+      </div>
+    </div>
+  </footer>
+
+  
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

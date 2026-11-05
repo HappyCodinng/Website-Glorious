@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penginapan — d'Glorious Crater Kamojang</title>
+  <meta name="description" content="Pilihan penginapan d'Glorious Crater Kamojang: Eagle Hill Superior, Eagle Hill Suite, Eagle Hill Deluxe, Royal Kahuripan Glamping, Camp Jamuju Tent, Camp Cakrawala Tent, Glorious CampGround, Kavling Rasamala.">
+  <meta property="og:title" content="d'Glorious Crater Kamojang">
+  <meta property="og:description" content="LETS CREATE A GLORIOUS MOMENT — menginap di tengah sejuknya alam Kamojang.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=optional" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header is-static" id="siteHeader">
+    <div class="container header__inner">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <a class="brand" href="index.html" aria-label="d'Glorious Crater Kamojang">
+        <img class="brand__logo" src="assets/img/logo.png" alt="d'Glorious Crater Kamojang">
+        <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+      </a>
+
+      <ul class="nav__list header__nav"><li><a href="index.html">Beranda</a></li><li><a href="akomodasi.html" class="is-active" aria-current="page">Penginapan</a></li><li><a href="jadwal.html">Jadwal</a></li><li><a href="reservasi.html">Reservasi</a></li></ul>
+    </div>
+  </header>
+
+  <div class="navpanel-backdrop" id="navBackdrop" hidden></div>
+  <nav class="navpanel" id="primaryNav" aria-label="Menu utama">
+    <div class="navpanel__head">
+      <span class="navpanel__title">Menu</span>
+      <button class="navpanel__close" id="navClose" type="button" aria-label="Tutup menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="nav__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Penginapan">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Penginapan</span>
+      </a></li>
+      <li><a href="jadwal.html" aria-label="Jadwal">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+        <span>Jadwal</span>
+      </a></li>
+      <li><a href="reservasi.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  
+  <!-- Navigasi bawah (layar kecil) -->
+  <nav class="bottombar" aria-label="Menu utama ponsel">
+    <ul class="bottombar__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Penginapan">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Penginapan</span>
+      </a></li>
+      <li><a href="jadwal.html" aria-label="Jadwal">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+        <span>Jadwal</span>
+      </a></li>
+      <li><a href="reservasi.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero page-hero--media page-hero--full">
+      <div class="page-hero__media"><img data-img="page-akomodasi" src="assets/img/Hero Akomodasi.webp" alt="Penginapan d'Glorious Crater Kamojang"></div>
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Penginapan</span></nav>
+        <p class="eyebrow">Penginapan</p>
+        <h1>Pilih Tempat Menginap Anda</h1>
+        <p>Delapan pilihan hunian di ketinggian 1.730 mdpl, dari cottage private hot spring hingga glamping dan kavling di tengah alam Kamojang.</p>
+      </div>
+    </section>    <!-- ================= EAGLE HILL SUPERIOR ================= -->
+    <section class="section section--cream" id="eagle-hill-superior">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal>
+            <div class="media ratio-4x3">
+              <img src="assets/img/EHSuper.webp" alt="Eagle Hill Superior">
+              <button class="pano360-btn" type="button" data-pano data-pano-set="villa" data-title="Eagle Hill Superior" aria-label="Buka virtual tour Eagle Hill Superior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.2"/><path d="M12 3.2c2.4 2.2 3.8 5.2 3.8 8.8s-1.4 6.6-3.8 8.8c-2.4-2.2-3.8-5.2-3.8-8.8S9.6 5.4 12 3.2z"/><path d="M3.6 9.6C5.2 10.8 8.4 11.5 12 11.5s6.8-.7 8.4-1.9"/></svg>
+                <span>Virtual Tour</span>
+              </button>
+            </div>
+          </div>
+          <div class="split__body" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">Cottage</p>
+            <h2>Eagle Hill Superior</h2>
+            <p>Cottage eksklusif dengan private hot spring, dikelilingi udara sejuk pegunungan Kamojang.</p>
+<ul class="room-facilities"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5.5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2V17"/><path d="M2 17h20"/><path d="M2 20v-3M22 20v-3"/><circle cx="7.5" cy="12.2" r="1.6"/><path d="M4 9.5V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.5"/></svg><span>1 Queen Bed</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M17.5 11.5a2.6 2.6 0 1 0 0-5.2"/><path d="M18.6 14.4c1.7.8 2.9 2.5 2.9 4.6"/></svg><span>Kapasitas 2 Orang</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.2 2.6 3.8 4.6 3.8 7a3.8 3.8 0 0 1-7.6 0c0-2.4 1.6-4.4 3.8-7z"/><path d="M6.5 19.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/><path d="M6.5 22c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/></svg><span>Private Hot Spring</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Bathroom</span></li></ul>
+            <div class="room-amenities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Kamar</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 21h8"/><path d="M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5"/></svg><span>Breakfast</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4V3H6a2 2 0 0 0-2 2v16"/><path d="M7 10a6 6 0 0 1 12 0z"/><path d="M9 14v2M13 14v2M17 14v2M11 19v2M15 19v2"/></svg><span>Water Heater</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="9" width="10" height="12" rx="2"/><path d="M10 9V6h4v3"/><path d="M12 6V3h3"/></svg><span>Toiletries</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Amenities</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18"/><path d="M6 4v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4"/><path d="M6 14.5h12M6 17.5h12"/></svg><span>Handuk</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></svg><span>Kopi &amp; Teh</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.8 0 4.5 2.6 4.5 6 0 2.2-.6 3.6-.6 6 0 3.2-1.6 6-3.9 6s-3.9-2.8-3.9-6c0-2.4-.6-3.8-.6-6 0-3.4 1.7-6 4.5-6z"/><path d="M12 13v-2.5M8.7 7.5 12 10.5l3.3-3"/></svg><span>Sandal</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>TV</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.7 15.8a6 6 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><span>Free Wifi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="8" rx="2"/><path d="M6 9h12"/><path d="M8 16v2M12 16v4M16 16v2"/></svg><span>AC</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.2 2.6 3.8 4.6 3.8 7a3.8 3.8 0 0 1-7.6 0c0-2.4 1.6-4.4 3.8-7z"/><path d="M6.5 19.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/><path d="M6.5 22c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/></svg><span>Private Hot Spring</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Kamar Mandi Dalam</span></li></ul>
+            </div>
+            <div class="general-facilities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Umum</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14.5 5v14" stroke-dasharray="2 2"/></svg><span>Tiket DGCK</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><span>Keamanan 24 Jam</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6.5" r="3"/><path d="M8 14a4 4 0 0 1 8 0"/><path d="M4 21v-7h16v7"/><path d="M3 21h18"/></svg><span>Resepsionis</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"/><path d="M5 4 3 21M19 4l2 17"/><path d="M9 4v11.5M15 4v11.5"/><path d="M7.5 15.5H11M13 15.5h3.5"/></svg><span>Playground</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.5-3 4-3 7v3h3"/></svg><span>Restaurant</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M16 3v10M8 7h8M8 11h8"/><path d="M3 16.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/><path d="M3 20.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/></svg><span>Nirwana Pool &amp; Resto</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9.5"/><circle cx="12" cy="8.7" r=".9"/><path d="M2 21h20"/></svg><span>Room Service</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 8.5 9h7L22 20z"/><path d="M10 9 9 6M12 9V5M14 9l1-3"/></svg><span>Cratera Resto</span></li></ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EAGLE HILL SUITE ================= -->
+    <section class="section" id="eagle-hill-suite">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal>
+            <div class="media ratio-4x3">
+              <img src="assets/img/EHSuite.webp" alt="Eagle Hill Suite">
+              <button class="pano360-btn" type="button" data-pano data-pano-set="villa" data-title="Eagle Hill Suite" aria-label="Buka virtual tour Eagle Hill Suite">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.2"/><path d="M12 3.2c2.4 2.2 3.8 5.2 3.8 8.8s-1.4 6.6-3.8 8.8c-2.4-2.2-3.8-5.2-3.8-8.8S9.6 5.4 12 3.2z"/><path d="M3.6 9.6C5.2 10.8 8.4 11.5 12 11.5s6.8-.7 8.4-1.9"/></svg>
+                <span>Virtual Tour</span>
+              </button>
+            </div>
+          </div>
+          <div class="split__body" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">Cottage</p>
+            <h2>Eagle Hill Suite</h2>
+            <p>Cottage eksklusif dengan private hot spring, dikelilingi udara sejuk pegunungan Kamojang.</p>
+<ul class="room-facilities"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5.5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2V17"/><path d="M2 17h20"/><path d="M2 20v-3M22 20v-3"/><circle cx="7.5" cy="12.2" r="1.6"/><path d="M4 9.5V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.5"/></svg><span>1 Queen Bed</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M17.5 11.5a2.6 2.6 0 1 0 0-5.2"/><path d="M18.6 14.4c1.7.8 2.9 2.5 2.9 4.6"/></svg><span>Kapasitas 2 Orang</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.2 2.6 3.8 4.6 3.8 7a3.8 3.8 0 0 1-7.6 0c0-2.4 1.6-4.4 3.8-7z"/><path d="M6.5 19.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/><path d="M6.5 22c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/></svg><span>Private Hot Spring</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Bathroom</span></li></ul>
+            <div class="room-amenities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Kamar</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 21h8"/><path d="M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5"/></svg><span>Breakfast</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4V3H6a2 2 0 0 0-2 2v16"/><path d="M7 10a6 6 0 0 1 12 0z"/><path d="M9 14v2M13 14v2M17 14v2M11 19v2M15 19v2"/></svg><span>Water Heater</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="9" width="10" height="12" rx="2"/><path d="M10 9V6h4v3"/><path d="M12 6V3h3"/></svg><span>Toiletries</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Amenities</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18"/><path d="M6 4v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4"/><path d="M6 14.5h12M6 17.5h12"/></svg><span>Handuk</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></svg><span>Kopi &amp; Teh</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.8 0 4.5 2.6 4.5 6 0 2.2-.6 3.6-.6 6 0 3.2-1.6 6-3.9 6s-3.9-2.8-3.9-6c0-2.4-.6-3.8-.6-6 0-3.4 1.7-6 4.5-6z"/><path d="M12 13v-2.5M8.7 7.5 12 10.5l3.3-3"/></svg><span>Sandal</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>TV</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.7 15.8a6 6 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><span>Free Wifi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="8" rx="2"/><path d="M6 9h12"/><path d="M8 16v2M12 16v4M16 16v2"/></svg><span>AC</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.2 2.6 3.8 4.6 3.8 7a3.8 3.8 0 0 1-7.6 0c0-2.4 1.6-4.4 3.8-7z"/><path d="M6.5 19.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/><path d="M6.5 22c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/></svg><span>Private Hot Spring</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Kamar Mandi Dalam</span></li></ul>
+            </div>
+            <div class="general-facilities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Umum</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14.5 5v14" stroke-dasharray="2 2"/></svg><span>Tiket DGCK</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><span>Keamanan 24 Jam</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6.5" r="3"/><path d="M8 14a4 4 0 0 1 8 0"/><path d="M4 21v-7h16v7"/><path d="M3 21h18"/></svg><span>Resepsionis</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"/><path d="M5 4 3 21M19 4l2 17"/><path d="M9 4v11.5M15 4v11.5"/><path d="M7.5 15.5H11M13 15.5h3.5"/></svg><span>Playground</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.5-3 4-3 7v3h3"/></svg><span>Restaurant</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M16 3v10M8 7h8M8 11h8"/><path d="M3 16.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/><path d="M3 20.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/></svg><span>Nirwana Pool &amp; Resto</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9.5"/><circle cx="12" cy="8.7" r=".9"/><path d="M2 21h20"/></svg><span>Room Service</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 8.5 9h7L22 20z"/><path d="M10 9 9 6M12 9V5M14 9l1-3"/></svg><span>Cratera Resto</span></li></ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EAGLE HILL DELUXE ================= -->
+    <section class="section section--cream" id="eagle-hill-deluxe">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal>
+            <div class="media ratio-4x3">
+              <img src="assets/img/EHDeluxe.webp" alt="Eagle Hill Deluxe">
+              <button class="pano360-btn" type="button" data-pano data-pano-set="villa" data-title="Eagle Hill Deluxe" aria-label="Buka virtual tour Eagle Hill Deluxe">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.2"/><path d="M12 3.2c2.4 2.2 3.8 5.2 3.8 8.8s-1.4 6.6-3.8 8.8c-2.4-2.2-3.8-5.2-3.8-8.8S9.6 5.4 12 3.2z"/><path d="M3.6 9.6C5.2 10.8 8.4 11.5 12 11.5s6.8-.7 8.4-1.9"/></svg>
+                <span>Virtual Tour</span>
+              </button>
+            </div>
+          </div>
+          <div class="split__body" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">Cottage</p>
+            <h2>Eagle Hill Deluxe</h2>
+            <p>Cottage eksklusif dengan private hot spring, dikelilingi udara sejuk pegunungan Kamojang.</p>
+<ul class="room-facilities"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5.5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2V17"/><path d="M2 17h20"/><path d="M2 20v-3M22 20v-3"/><circle cx="7.5" cy="12.2" r="1.6"/><path d="M4 9.5V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.5"/></svg><span>1 Queen Bed</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M17.5 11.5a2.6 2.6 0 1 0 0-5.2"/><path d="M18.6 14.4c1.7.8 2.9 2.5 2.9 4.6"/></svg><span>Kapasitas 2 Orang</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.2 2.6 3.8 4.6 3.8 7a3.8 3.8 0 0 1-7.6 0c0-2.4 1.6-4.4 3.8-7z"/><path d="M6.5 19.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/><path d="M6.5 22c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/></svg><span>Private Hot Spring</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Bathroom</span></li></ul>
+            <div class="room-amenities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Kamar</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 21h8"/><path d="M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5"/></svg><span>Breakfast</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4V3H6a2 2 0 0 0-2 2v16"/><path d="M7 10a6 6 0 0 1 12 0z"/><path d="M9 14v2M13 14v2M17 14v2M11 19v2M15 19v2"/></svg><span>Water Heater</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="9" width="10" height="12" rx="2"/><path d="M10 9V6h4v3"/><path d="M12 6V3h3"/></svg><span>Toiletries</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Amenities</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18"/><path d="M6 4v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4"/><path d="M6 14.5h12M6 17.5h12"/></svg><span>Handuk</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></svg><span>Kopi &amp; Teh</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.8 0 4.5 2.6 4.5 6 0 2.2-.6 3.6-.6 6 0 3.2-1.6 6-3.9 6s-3.9-2.8-3.9-6c0-2.4-.6-3.8-.6-6 0-3.4 1.7-6 4.5-6z"/><path d="M12 13v-2.5M8.7 7.5 12 10.5l3.3-3"/></svg><span>Sandal</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>TV</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.7 15.8a6 6 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><span>Free Wifi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="8" rx="2"/><path d="M6 9h12"/><path d="M8 16v2M12 16v4M16 16v2"/></svg><span>AC</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.2 2.6 3.8 4.6 3.8 7a3.8 3.8 0 0 1-7.6 0c0-2.4 1.6-4.4 3.8-7z"/><path d="M6.5 19.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/><path d="M6.5 22c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0"/></svg><span>Private Hot Spring</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Kamar Mandi Dalam</span></li></ul>
+            </div>
+            <div class="general-facilities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Umum</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14.5 5v14" stroke-dasharray="2 2"/></svg><span>Tiket DGCK</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><span>Keamanan 24 Jam</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6.5" r="3"/><path d="M8 14a4 4 0 0 1 8 0"/><path d="M4 21v-7h16v7"/><path d="M3 21h18"/></svg><span>Resepsionis</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"/><path d="M5 4 3 21M19 4l2 17"/><path d="M9 4v11.5M15 4v11.5"/><path d="M7.5 15.5H11M13 15.5h3.5"/></svg><span>Playground</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.5-3 4-3 7v3h3"/></svg><span>Restaurant</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M16 3v10M8 7h8M8 11h8"/><path d="M3 16.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/><path d="M3 20.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/></svg><span>Nirwana Pool &amp; Resto</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9.5"/><circle cx="12" cy="8.7" r=".9"/><path d="M2 21h20"/></svg><span>Room Service</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 8.5 9h7L22 20z"/><path d="M10 9 9 6M12 9V5M14 9l1-3"/></svg><span>Cratera Resto</span></li></ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROYAL KAHURIPAN GLAMPING ================= -->
+    <section class="section" id="royal-kahuripan-glamping">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal>
+            <div class="media ratio-4x3">
+              <img src="assets/img/Royal Kahuripan.webp" alt="Royal Kahuripan Glamping">
+              <button class="pano360-btn" type="button" data-pano data-pano-set="royal-kahuripan-glamping" data-title="Royal Kahuripan Glamping" aria-label="Buka virtual tour Royal Kahuripan Glamping">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.2"/><path d="M12 3.2c2.4 2.2 3.8 5.2 3.8 8.8s-1.4 6.6-3.8 8.8c-2.4-2.2-3.8-5.2-3.8-8.8S9.6 5.4 12 3.2z"/><path d="M3.6 9.6C5.2 10.8 8.4 11.5 12 11.5s6.8-.7 8.4-1.9"/></svg>
+                <span>Virtual Tour</span>
+              </button>
+            </div>
+          </div>
+          <div class="split__body" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">Glamping</p>
+            <h2>Royal Kahuripan Glamping</h2>
+            <p>Glamping ini menawarkan kombinasi fasilitas modern di tengah lanskap alam kawah aktif yang berkabut dan dikelilingi hutan pinus.</p>
+<ul class="room-facilities"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5.5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2V17"/><path d="M2 17h20"/><path d="M2 20v-3M22 20v-3"/><circle cx="7.5" cy="12.2" r="1.6"/><path d="M4 9.5V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.5"/></svg><span>1 Queen Bed</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M17.5 11.5a2.6 2.6 0 1 0 0-5.2"/><path d="M18.6 14.4c1.7.8 2.9 2.5 2.9 4.6"/></svg><span>Kapasitas 2 Orang</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Bathroom</span></li></ul>
+            <div class="room-amenities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Kamar</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 21h8"/><path d="M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5"/></svg><span>Breakfast</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 9v6M12 9v6M16 9v6"/><path d="M6 18v2M18 18v2"/></svg><span>Room Heater</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M10.5 8.5v5l4-2.5z"/><path d="M8 21h8M12 17v4"/></svg><span>TV Digital</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.7 15.8a6 6 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><span>Free Wifi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4V3H6a2 2 0 0 0-2 2v16"/><path d="M7 10a6 6 0 0 1 12 0z"/><path d="M9 14v2M13 14v2M17 14v2M11 19v2M15 19v2"/></svg><span>Water Heater</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.8 0 4.5 2.6 4.5 6 0 2.2-.6 3.6-.6 6 0 3.2-1.6 6-3.9 6s-3.9-2.8-3.9-6c0-2.4-.6-3.8-.6-6 0-3.4 1.7-6 4.5-6z"/><path d="M12 13v-2.5M8.7 7.5 12 10.5l3.3-3"/></svg><span>Slippers &amp; Toiletries</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Amenities</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14"/><path d="M8 6v1.5M8 13v3"/></svg><span>Mini Bar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/><path d="M4 12a2 2 0 0 1 4 0v3h8v-3a2 2 0 0 1 4 0v5H4z"/><path d="M6 17v3M18 17v3"/></svg><span>Meja &amp; Kursi Santai</span></li></ul>
+            </div>
+            <div class="general-facilities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Umum</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14.5 5v14" stroke-dasharray="2 2"/></svg><span>Tiket DGCK</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><span>Keamanan 24 Jam</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6.5" r="3"/><path d="M8 14a4 4 0 0 1 8 0"/><path d="M4 21v-7h16v7"/><path d="M3 21h18"/></svg><span>Resepsionis</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"/><path d="M5 4 3 21M19 4l2 17"/><path d="M9 4v11.5M15 4v11.5"/><path d="M7.5 15.5H11M13 15.5h3.5"/></svg><span>Playground</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.5-3 4-3 7v3h3"/></svg><span>Restaurant</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M16 3v10M8 7h8M8 11h8"/><path d="M3 16.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/><path d="M3 20.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/></svg><span>Nirwana Pool &amp; Resto</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9.5"/><circle cx="12" cy="8.7" r=".9"/><path d="M2 21h20"/></svg><span>Room Service</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 8.5 9h7L22 20z"/><path d="M10 9 9 6M12 9V5M14 9l1-3"/></svg><span>Cratera Resto</span></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAMP JAMUJU TENT ================= -->
+    <section class="section section--cream" id="camp-jamuju-tent">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal>
+            <div class="media ratio-4x3">
+              <img src="assets/img/Camp Jamuju.webp" alt="Camp Jamuju Tent">
+              <button class="pano360-btn" type="button" data-pano data-pano-set="camp-jamuju-tent" data-title="Camp Jamuju Tent" aria-label="Buka virtual tour Camp Jamuju Tent">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.2"/><path d="M12 3.2c2.4 2.2 3.8 5.2 3.8 8.8s-1.4 6.6-3.8 8.8c-2.4-2.2-3.8-5.2-3.8-8.8S9.6 5.4 12 3.2z"/><path d="M3.6 9.6C5.2 10.8 8.4 11.5 12 11.5s6.8-.7 8.4-1.9"/></svg>
+                <span>Virtual Tour</span>
+              </button>
+            </div>
+          </div>
+          <div class="split__body" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">Tenda</p>
+            <h2>Camp Jamuju Tent</h2>
+            <p>Tenda kemping lega untuk 4 orang dengan area halaman samping, dikelilingi pepohonan rindang dan udara sejuk pegunungan Kamojang.</p>
+<ul class="room-facilities"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5.5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2V17"/><path d="M2 17h20"/><path d="M2 20v-3M22 20v-3"/><circle cx="7.5" cy="12.2" r="1.6"/><path d="M4 9.5V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.5"/></svg><span>4 Single Bed</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M17.5 11.5a2.6 2.6 0 1 0 0-5.2"/><path d="M18.6 14.4c1.7.8 2.9 2.5 2.9 4.6"/></svg><span>Kapasitas 4 Orang</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Bathroom (Sharing)</span></li></ul>
+            <div class="room-amenities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Tenda</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 21h8"/><path d="M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5"/></svg><span>Breakfast</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/><path d="M4 12a2 2 0 0 1 4 0v3h8v-3a2 2 0 0 1 4 0v5H4z"/><path d="M6 17v3M18 17v3"/></svg><span>Meja &amp; Kursi Santai</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 7 10h3l-4 6h12l-4-6h3z"/><path d="M12 16v5"/></svg><span>Area Halaman Samping</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.7 15.8a6 6 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><span>Free Wifi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><circle cx="12" cy="10.5" r="3"/><circle cx="7" cy="17" r=".5"/><circle cx="17" cy="17" r=".5"/><circle cx="12" cy="10.5" r=".5"/></svg><span>Kayu Bakar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Amenities</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="6" rx="1.5"/><path d="M7 9v11M17 9v11M4 21h16"/><path d="M12 9v3"/><path d="M9.5 15.5h5v3h-5z"/></svg><span>Coffee Corner</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4V3H6a2 2 0 0 0-2 2v16"/><path d="M7 10a6 6 0 0 1 12 0z"/><path d="M9 14v2M13 14v2M17 14v2M11 19v2M15 19v2"/></svg><span>Water Heater Bathroom (Sharing)</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c1 3.2 4.5 5 4.5 9.2A4.5 4.5 0 0 1 12 16.5a4.5 4.5 0 0 1-4.5-4.8c0-1.9.9-3.2 1.9-4.2.2 1.4.9 2.1 1.7 2.3C10.7 7.9 11.2 5.3 12 2.5z"/><path d="M5 21l14-3M5 18l14 3"/></svg><span>Bonfire (Sharing)</span></li></ul>
+            </div>
+            <div class="general-facilities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Umum</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14.5 5v14" stroke-dasharray="2 2"/></svg><span>Tiket DGCK</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><span>Keamanan 24 Jam</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6.5" r="3"/><path d="M8 14a4 4 0 0 1 8 0"/><path d="M4 21v-7h16v7"/><path d="M3 21h18"/></svg><span>Resepsionis</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"/><path d="M5 4 3 21M19 4l2 17"/><path d="M9 4v11.5M15 4v11.5"/><path d="M7.5 15.5H11M13 15.5h3.5"/></svg><span>Playground</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.5-3 4-3 7v3h3"/></svg><span>Restaurant</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M16 3v10M8 7h8M8 11h8"/><path d="M3 16.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/><path d="M3 20.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/></svg><span>Nirwana Pool &amp; Resto</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9.5"/><circle cx="12" cy="8.7" r=".9"/><path d="M2 21h20"/></svg><span>Room Service</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 8.5 9h7L22 20z"/><path d="M10 9 9 6M12 9V5M14 9l1-3"/></svg><span>Cratera Resto</span></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAMP CAKRAWALA TENT ================= -->
+    <section class="section" id="camp-cakrawala-tent">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal>
+            <div class="media ratio-4x3">
+              <img src="assets/img/CampCakrawala.webp" alt="Camp Cakrawala Tent">
+              <button class="pano360-btn" type="button" data-pano data-pano-set="camp-cakrawala-tend" data-title="Camp Cakrawala Tent" aria-label="Buka virtual tour Camp Cakrawala Tent">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.2"/><path d="M12 3.2c2.4 2.2 3.8 5.2 3.8 8.8s-1.4 6.6-3.8 8.8c-2.4-2.2-3.8-5.2-3.8-8.8S9.6 5.4 12 3.2z"/><path d="M3.6 9.6C5.2 10.8 8.4 11.5 12 11.5s6.8-.7 8.4-1.9"/></svg>
+                <span>Virtual Tour</span>
+              </button>
+            </div>
+          </div>
+          <div class="split__body" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">Tenda</p>
+            <h2>Camp Cakrawala Tent</h2>
+            <p>Tenda kemping lega untuk 3 orang dengan coffee corner dan bonfire bersama, dikelilingi pepohonan rindang di bawah panorama langit terbuka Kamojang.</p>
+<ul class="room-facilities"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5.5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2V17"/><path d="M2 17h20"/><path d="M2 20v-3M22 20v-3"/><circle cx="7.5" cy="12.2" r="1.6"/><path d="M4 9.5V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.5"/></svg><span>2 Single Bed</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M17.5 11.5a2.6 2.6 0 1 0 0-5.2"/><path d="M18.6 14.4c1.7.8 2.9 2.5 2.9 4.6"/></svg><span>Kapasitas 3 Orang</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Bathroom (Sharing)</span></li></ul>
+            <div class="room-amenities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Tenda</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 21h8"/><path d="M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5"/></svg><span>Breakfast</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/><path d="M4 12a2 2 0 0 1 4 0v3h8v-3a2 2 0 0 1 4 0v5H4z"/><path d="M6 17v3M18 17v3"/></svg><span>Meja &amp; Kursi Santai</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="6" rx="1.5"/><path d="M7 9v11M17 9v11M4 21h16"/><path d="M12 9v3"/><path d="M9.5 15.5h5v3h-5z"/></svg><span>Coffee Corner</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.7 15.8a6 6 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><span>Free Wifi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><circle cx="12" cy="10.5" r="3"/><circle cx="7" cy="17" r=".5"/><circle cx="17" cy="17" r=".5"/><circle cx="12" cy="10.5" r=".5"/></svg><span>Kayu Bakar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Amenities</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4V3H6a2 2 0 0 0-2 2v16"/><path d="M7 10a6 6 0 0 1 12 0z"/><path d="M9 14v2M13 14v2M17 14v2M11 19v2M15 19v2"/></svg><span>Water Heater Bathroom (Sharing)</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c1 3.2 4.5 5 4.5 9.2A4.5 4.5 0 0 1 12 16.5a4.5 4.5 0 0 1-4.5-4.8c0-1.9.9-3.2 1.9-4.2.2 1.4.9 2.1 1.7 2.3C10.7 7.9 11.2 5.3 12 2.5z"/><path d="M5 21l14-3M5 18l14 3"/></svg><span>Bonfire (Sharing)</span></li></ul>
+            </div>
+            <div class="general-facilities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Umum</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14.5 5v14" stroke-dasharray="2 2"/></svg><span>Tiket DGCK</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><span>Keamanan 24 Jam</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6.5" r="3"/><path d="M8 14a4 4 0 0 1 8 0"/><path d="M4 21v-7h16v7"/><path d="M3 21h18"/></svg><span>Resepsionis</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"/><path d="M5 4 3 21M19 4l2 17"/><path d="M9 4v11.5M15 4v11.5"/><path d="M7.5 15.5H11M13 15.5h3.5"/></svg><span>Playground</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.5-3 4-3 7v3h3"/></svg><span>Restaurant</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M16 3v10M8 7h8M8 11h8"/><path d="M3 16.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/><path d="M3 20.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/></svg><span>Nirwana Pool &amp; Resto</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9.5"/><circle cx="12" cy="8.7" r=".9"/><path d="M2 21h20"/></svg><span>Room Service</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 8.5 9h7L22 20z"/><path d="M10 9 9 6M12 9V5M14 9l1-3"/></svg><span>Cratera Resto</span></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GLORIOUS CAMPGROUND ================= -->
+    <section class="section section--cream" id="glorious-campground">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal>
+            <div class="media ratio-4x3">
+              <img src="assets/img/GloriousCampground.webp" alt="Glorious CampGround">
+              <button class="pano360-btn" type="button" data-pano data-pano-set="glorious-campervan" data-title="Glorious CampGround" aria-label="Buka virtual tour Glorious CampGround">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.2"/><path d="M12 3.2c2.4 2.2 3.8 5.2 3.8 8.8s-1.4 6.6-3.8 8.8c-2.4-2.2-3.8-5.2-3.8-8.8S9.6 5.4 12 3.2z"/><path d="M3.6 9.6C5.2 10.8 8.4 11.5 12 11.5s6.8-.7 8.4-1.9"/></svg>
+                <span>Virtual Tour</span>
+              </button>
+            </div>
+          </div>
+          <div class="split__body" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">CampGround</p>
+            <h2>Glorious CampGround</h2>
+            <p>Kavling lega seluas 5x7 meter untuk campervan hingga 4 orang, lengkap dengan sumber listrik, coffee corner, dan api unggun bersama di udara sejuk Kamojang.</p>
+<ul class="room-facilities"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/><path d="M9 12h6"/></svg><span>Kavling 5x7 Meter</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M17.5 11.5a2.6 2.6 0 1 0 0-5.2"/><path d="M18.6 14.4c1.7.8 2.9 2.5 2.9 4.6"/></svg><span>Akses Area untuk 4 Orang</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Bathroom (Sharing)</span></li></ul>
+            <div class="room-amenities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Kavling</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c1 3.2 4.5 5 4.5 9.2A4.5 4.5 0 0 1 12 16.5a4.5 4.5 0 0 1-4.5-4.8c0-1.9.9-3.2 1.9-4.2.2 1.4.9 2.1 1.7 2.3C10.7 7.9 11.2 5.3 12 2.5z"/><path d="M5 21l14-3M5 18l14 3"/></svg><span>Bonfire (Sharing)</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><span>Sumber Listrik</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="6" rx="1.5"/><path d="M7 9v11M17 9v11M4 21h16"/><path d="M12 9v3"/><path d="M9.5 15.5h5v3h-5z"/></svg><span>Coffee Corner</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.7 15.8a6 6 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><span>Free Wifi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><circle cx="12" cy="10.5" r="3"/><circle cx="7" cy="17" r=".5"/><circle cx="17" cy="17" r=".5"/><circle cx="12" cy="10.5" r=".5"/></svg><span>Kayu Bakar</span></li></ul>
+            </div>
+            <div class="general-facilities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Umum</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14.5 5v14" stroke-dasharray="2 2"/></svg><span>Tiket DGCK</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><span>Keamanan 24 Jam</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6.5" r="3"/><path d="M8 14a4 4 0 0 1 8 0"/><path d="M4 21v-7h16v7"/><path d="M3 21h18"/></svg><span>Resepsionis</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"/><path d="M5 4 3 21M19 4l2 17"/><path d="M9 4v11.5M15 4v11.5"/><path d="M7.5 15.5H11M13 15.5h3.5"/></svg><span>Playground</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.5-3 4-3 7v3h3"/></svg><span>Restaurant</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M16 3v10M8 7h8M8 11h8"/><path d="M3 16.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/><path d="M3 20.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/></svg><span>Nirwana Pool &amp; Resto</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9.5"/><circle cx="12" cy="8.7" r=".9"/><path d="M2 21h20"/></svg><span>Room Service</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 8.5 9h7L22 20z"/><path d="M10 9 9 6M12 9V5M14 9l1-3"/></svg><span>Cratera Resto</span></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= KAVLING RASAMALA ================= -->
+    <section class="section" id="kavling-rasamala">
+      <div class="container">
+        <div class="split">
+          <div class="split__media" data-reveal>
+            <div class="media ratio-4x3">
+              <img src="assets/img/Kavling Rasamala.webp" alt="Kavling Rasamala">
+              <button class="pano360-btn" type="button" data-pano data-pano-set="camp-rasamala-tent" data-title="Kavling Rasamala" aria-label="Buka virtual tour Kavling Rasamala">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.2"/><path d="M12 3.2c2.4 2.2 3.8 5.2 3.8 8.8s-1.4 6.6-3.8 8.8c-2.4-2.2-3.8-5.2-3.8-8.8S9.6 5.4 12 3.2z"/><path d="M3.6 9.6C5.2 10.8 8.4 11.5 12 11.5s6.8-.7 8.4-1.9"/></svg>
+                <span>Virtual Tour</span>
+              </button>
+            </div>
+          </div>
+          <div class="split__body" data-reveal data-reveal-delay="1">
+            <p class="eyebrow">Kavling</p>
+            <h2>Kavling Rasamala</h2>
+            <p>Tenda kemping lega untuk 4 orang dengan coffee corner dan bonfire pribadi, dikelilingi pepohonan rasamala yang rindang di udara sejuk pegunungan Kamojang.</p>
+<ul class="room-facilities"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17v-5.5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2V17"/><path d="M2 17h20"/><path d="M2 20v-3M22 20v-3"/><circle cx="7.5" cy="12.2" r="1.6"/><path d="M4 9.5V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.5"/></svg><span>4 Single Bed</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M17.5 11.5a2.6 2.6 0 1 0 0-5.2"/><path d="M18.6 14.4c1.7.8 2.9 2.5 2.9 4.6"/></svg><span>Kapasitas 4 Orang</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11.5h17v2a5 5 0 0 1-5 5h-7a5 5 0 0 1-5-5z"/><path d="M5.5 11.5v-1.7a2.2 2.2 0 0 1 4.4 0"/><path d="M6.2 18.6 5.4 21M17.8 18.6l.8 2.4"/><path d="M14.8 5.8V4.4a1.7 1.7 0 1 0-3.4 0"/></svg><span>Bathroom (Sharing)</span></li></ul>
+            <div class="room-amenities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Tenda</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 21h8"/><path d="M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5"/></svg><span>Breakfast</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/><path d="M4 12a2 2 0 0 1 4 0v3h8v-3a2 2 0 0 1 4 0v5H4z"/><path d="M6 17v3M18 17v3"/></svg><span>Meja &amp; Kursi Santai</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="6" rx="1.5"/><path d="M7 9v11M17 9v11M4 21h16"/><path d="M12 9v3"/><path d="M9.5 15.5h5v3h-5z"/></svg><span>Coffee Corner</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9a15 15 0 0 1 19 0"/><path d="M5.5 12.5a10.5 10.5 0 0 1 13 0"/><path d="M8.7 15.8a6 6 0 0 1 6.6 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg><span>Free Wifi</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/><circle cx="12" cy="10.5" r="3"/><circle cx="7" cy="17" r=".5"/><circle cx="17" cy="17" r=".5"/><circle cx="12" cy="10.5" r=".5"/></svg><span>Kayu Bakar</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg><span>Amenities</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4V3H6a2 2 0 0 0-2 2v16"/><path d="M7 10a6 6 0 0 1 12 0z"/><path d="M9 14v2M13 14v2M17 14v2M11 19v2M15 19v2"/></svg><span>Water Heater Bathroom (Sharing)</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c1 3.2 4.5 5 4.5 9.2A4.5 4.5 0 0 1 12 16.5a4.5 4.5 0 0 1-4.5-4.8c0-1.9.9-3.2 1.9-4.2.2 1.4.9 2.1 1.7 2.3C10.7 7.9 11.2 5.3 12 2.5z"/><path d="M5 21l14-3M5 18l14 3"/></svg><span>Bonfire (Private)</span></li></ul>
+            </div>
+            <div class="general-facilities mt-2">
+              <h3 class="room-amenities__title">Fasilitas Umum</h3>
+<ul class="room-amenities__list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 1 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14.5 5v14" stroke-dasharray="2 2"/></svg><span>Tiket DGCK</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></svg><span>Keamanan 24 Jam</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6.5" r="3"/><path d="M8 14a4 4 0 0 1 8 0"/><path d="M4 21v-7h16v7"/><path d="M3 21h18"/></svg><span>Resepsionis</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14"/><path d="M5 4 3 21M19 4l2 17"/><path d="M9 4v11.5M15 4v11.5"/><path d="M7.5 15.5H11M13 15.5h3.5"/></svg><span>Playground</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2.2 1.5-3 4-3 7v3h3"/></svg><span>Restaurant</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M16 3v10M8 7h8M8 11h8"/><path d="M3 16.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/><path d="M3 20.5c1.6-1.4 3.4-1.4 5 0s3.4 1.4 5 0 3.4-1.4 5 0 3.4 1.4 3 0"/></svg><span>Nirwana Pool &amp; Resto</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18h18"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 11V9.5"/><circle cx="12" cy="8.7" r=".9"/><path d="M2 21h20"/></svg><span>Room Service</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20 8.5 9h7L22 20z"/><path d="M10 9 9 6M12 9V5M14 9l1-3"/></svg><span>Cratera Resto</span></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+          <p>Penginapan alam &amp; glamping di ketinggian 1.730 mdpl kawasan Kamojang. LETS CREATE A GLORIOUS MOMENT.</p>
+          <div class="socials">
+            <a data-instagram href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a data-facebook href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.2c0-.9.3-1.5 1.6-1.5H16.5V5.1C16.2 5 15.3 5 14.3 5c-2 0-3.4 1.2-3.4 3.5V11H8.5v3h2.4v7z"/></svg></a>
+            <a data-wa href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 0 1 0 16.4 8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.3c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Lokasi</h4>
+          <div class="footer__map">
+            <iframe data-maps-embed title="Peta lokasi d'Glorious Crater Kamojang" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <a class="footer__map-link" data-maps-directions href="#">Petunjuk Arah &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year></span> d'Glorious Crater Kamojang. Seluruh hak cipta dilindungi.</span>
+        <span>Mekarwangi &middot; Ibun &middot; Bandung &middot; Jawa Barat</span>
+      </div>
+    </div>
+  </footer>
+
+  
+
+
+  <!-- ================= PRATINJAU 360 ================= -->
+  <div class="pano" id="pano" hidden>
+    <div class="pano__backdrop" data-pano-close></div>
+    <div class="pano__dialog" role="dialog" aria-modal="true" aria-label="Virtual tour 360 derajat">
+      <button class="pano__close pano__fs" type="button" data-pano-full aria-label="Layar penuh" title="Layar penuh">
+        <svg class="ic-enter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9V3h6"/><path d="M21 9V3h-6"/><path d="M3 15v6h6"/><path d="M21 15v6h-6"/></svg>
+        <svg class="ic-exit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v6H3"/><path d="M15 3v6h6"/><path d="M9 21v-6H3"/><path d="M15 21v-6h6"/></svg>
+      </button>
+      <button class="pano__close" type="button" data-pano-close aria-label="Tutup virtual tour">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="pano__scenes" id="panoScenes" hidden>
+        <div class="pano__scene" data-src="assets/img/360/villa/Villa Parkiran-8192.webp" data-yaw="-1.41" data-label="Parkiran">
+          <button class="pano__hot" type="button" data-hot="info" data-lon="1.15" data-lat="-0.16"
+                  data-info-title="Area Parkir" data-info-text="Area parkir privat di depan kluster. Mobil bisa parkir dekat dengan unit, jadi tidak perlu jalan jauh saat tiba."
+                  aria-label="Informasi Area Parkir">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11.3v5.2"/><circle cx="12" cy="7.9" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </button>
+        </div>
+        <div class="pano__scene" data-src="assets/img/360/villa/VIlla Halaman-8192.webp" data-yaw="-0.05" data-label="Halaman">
+          <button class="pano__hot" type="button" data-hot="info" data-lon="0.30" data-lat="-0.06"
+                  data-info-title="Halaman" data-info-text="Halaman terbuka di sekitar unit dengan rumput dan pepohonan — tempat duduk santai sambil menikmati udara pegunungan."
+                  aria-label="Informasi Halaman">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11.3v5.2"/><circle cx="12" cy="7.9" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </button>
+        </div>
+        <div class="pano__scene" data-src="assets/img/360/villa/Villa R keluarga-8192.webp" data-yaw="0.80" data-label="Ruang Keluarga">
+          <button class="pano__hot" type="button" data-hot="info" data-lon="-0.31" data-lat="-0.06"
+                  data-info-title="Ruang Keluarga" data-info-text="Ruang berkumpul bersama keluarga atau teman, dengan pencahayaan hangat dan suasananya yang tenang."
+                  aria-label="Informasi Ruang Keluarga">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11.3v5.2"/><circle cx="12" cy="7.9" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </button>
+        </div>
+        <div class="pano__scene" data-src="assets/img/360/villa/Villa Lemari pakaian-8192.webp" data-yaw="3.22" data-label="Lemari Pakaian">
+          <button class="pano__hot" type="button" data-hot="info" data-lon="2.86" data-lat="-0.10"
+                  data-info-title="Lemari Pakaian" data-info-text="Lemari pakaian untuk menata barang bawaan selama menginap."
+                  aria-label="Informasi Lemari Pakaian">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11.3v5.2"/><circle cx="12" cy="7.9" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </button>
+        </div>
+        <div class="pano__scene" data-src="assets/img/360/villa/Villa Kamar mandi -8192.webp" data-yaw="-0.35" data-label="Kamar Mandi">
+          <button class="pano__hot" type="button" data-hot="info" data-lon="0.58" data-lat="-0.20"
+                  data-info-title="Kamar Mandi" data-info-text="Kamar mandi dalam dengan air panas, shower, dan perlengkapan mandi."
+                  aria-label="Informasi Kamar Mandi">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11.3v5.2"/><circle cx="12" cy="7.9" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </button>
+        </div>
+        <div class="pano__scene" data-src="assets/img/360/villa/Villa ruangan belakang-8192.webp" data-yaw="-2.28" data-label="Ruang Belakang">
+          <button class="pano__hot" type="button" data-hot="info" data-lon="1.85" data-lat="-0.18"
+                  data-info-title="Ruang Belakang" data-info-text="Sisi belakang unit yang lebih privat, menghadap langsung ke area terbuka di sekitar kluster."
+                  aria-label="Informasi Ruang Belakang">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11.3v5.2"/><circle cx="12" cy="7.9" r="1.2" fill="currentColor" stroke="none"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="pano__stage" id="panoStage" tabindex="0" role="img" aria-label="Pemandangan 360 derajat, seret ke kiri atau kanan untuk memutar">
+        <div class="pano__strip" id="panoStrip"></div>
+        <div class="pano__hotspots" id="panoHotspots"></div>
+        <nav class="pano__tabs" id="panoTabs" role="tablist" aria-label="Pilih ruangan" hidden></nav>
+        <div class="pano__popup" id="panoInfo" hidden>
+          <button class="pano__popup-scrim" type="button" data-info-close aria-label="Tutup penjelasan"></button>
+          <div class="pano__popup-panel" role="dialog" aria-labelledby="panoPopTitle" tabindex="-1">
+            <button class="pano__popup-close" type="button" data-info-close aria-label="Tutup penjelasan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+            <span class="pano__popup-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11.3v5.2"/><circle cx="12" cy="7.9" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+            <h4 class="pano__info-title" id="panoPopTitle"></h4>
+            <p class="pano__info-text"></p>
+          </div>
+        </div>
+        <p class="pano__hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5 5 9l4 4"/><path d="M15 5l4 4-4 4"/><path d="M5 9h14"/></svg>
+          Seret untuk memutar · klik ikon i atau panah
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header-scroll.js"></script>
+  <script src="assets/js/nav-hero.js"></script>
+  <script src="assets/data/hotspots.js"></script>
+</body>
+</html>

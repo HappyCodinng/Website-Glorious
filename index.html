@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d'Glorious Crater Kamojang — LETS CREATE A GLORIOUS MOMENT</title>
+  <meta name="description" content="Penginapan alam & glamping di ketinggian 1.730 mdpl kawasan Kawah Kamojang. Villa private pool, lodge, dan glamping dengan panorama pegunungan.">
+  <meta property="og:title" content="d'Glorious Crater Kamojang">
+  <meta property="og:description" content="LETS CREATE A GLORIOUS MOMENT — menginap di tengah sejuknya alam Kamojang.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=optional" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header is-static" id="siteHeader">
+    <div class="container header__inner">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <a class="brand" href="index.html" aria-label="d'Glorious Crater Kamojang">
+        <img class="brand__logo" src="assets/img/logo.png" alt="d'Glorious Crater Kamojang">
+        <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+      </a>
+
+      <ul class="nav__list header__nav"><li><a href="index.html" class="is-active" aria-current="page">Beranda</a></li><li><a href="akomodasi.html">Penginapan</a></li><li><a href="jadwal.html">Jadwal</a></li><li><a href="reservasi.html">Reservasi</a></li></ul>
+    </div>
+  </header>
+
+  <div class="navpanel-backdrop" id="navBackdrop" hidden></div>
+  <nav class="navpanel" id="primaryNav" aria-label="Menu utama">
+    <div class="navpanel__head">
+      <span class="navpanel__title">Menu</span>
+      <button class="navpanel__close" id="navClose" type="button" aria-label="Tutup menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="nav__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Penginapan">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Penginapan</span>
+      </a></li>
+      <li><a href="jadwal.html" aria-label="Jadwal">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+        <span>Jadwal</span>
+      </a></li>
+      <li><a href="reservasi.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- Navigasi bawah (layar kecil) -->
+  <nav class="bottombar" aria-label="Menu utama ponsel">
+    <ul class="bottombar__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Penginapan">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Penginapan</span>
+      </a></li>
+      <li><a href="jadwal.html" aria-label="Jadwal">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+        <span>Jadwal</span>
+      </a></li>
+      <li><a href="reservasi.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero hero--split">
+      <span class="blob blob--1" aria-hidden="true"></span>
+      <span class="blob blob--2" aria-hidden="true"></span>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Kawah Kamojang · 1.730 mdpl</p>
+          <h1>Lets Create a <em>Glorious</em> Moment</h1>
+          <p class="hero__lead">Penginapan alam &amp; glamping dengan villa private pool, lodge, dan panorama pegunungan di tengah sejuknya Kamojang.</p>
+          <ul class="hero__facts">
+            <li><strong>1.730</strong><span>mdpl</span></li>
+            <li><strong>4,9</strong><span>rating tamu</span></li>
+            <li><strong>3+</strong><span>tipe hunian</span></li>
+          </ul>
+
+          <!-- Isi ruang kosong: PNG 360 + tombol akses -->
+          <div class="hero__360">
+            <div class="hero360">
+              <img class="hero360__img" src="assets/img/360.webp" alt="Tampilan 360 derajat kawasan Kamojang" width="552" height="552">
+              <div class="hero360__body">
+                <p class="hero360__title">Jelajahi Kamojang dalam 360°</p>
+                <p class="hero360__text">Lihat langsung suasana villa, lodge, dan glamping sebelum Anda memesan.</p>
+                <a class="btn btn--gold hero360__btn" href="AksesTur.html" aria-label="Buka halaman Akses Tur 360">Akses Tur</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__media">
+        <div class="hero__backdrop" aria-hidden="true"></div>
+        <video class="hero__video" data-img="hero" autoplay muted loop playsinline poster="assets/img/Hero.webp">
+          <source data-video="hero" src="assets/video/Hero1.mp4" type="video/mp4">
+        </video>
+          </div>
+          <div class="hero__chip"><strong>Kamojang</strong><span>Ibun · Bandung</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTRO ================= -->
+    <section class="section" id="tentang">
+      <div class="container split">
+        <div class="split__media" data-reveal>
+          <div class="media ratio-4x3">
+            <img data-img="intro" src="assets/img/intro.jpg" alt="Suasana alam d'Glorious Crater Kamojang">
+          </div>
+          <div class="split__badge">
+            <strong>1.730</strong>
+            <span>meter di atas permukaan laut</span>
+          </div>
+        </div>
+        <div class="split__body" data-reveal data-reveal-delay="1">
+          <p class="eyebrow">Selamat Datang</p>
+          <h2>d'Glorious Crater Kamojang</h2>
+          <p>Terletak di kawasan sejuk Mekarwangi, Ibun, Kabupaten Bandung, d'Glorious Crater Kamojang hadir sebagai destinasi wisata dan resort bernuansa tropis-minimalis yang menyatu harmonis dengan keasrian alam pegunungan serta keajaiban geotermal Kamojang. Mengusung semangat "Let's Create a Glorious Moment", kami menawarkan pengalaman berlibur yang nyaman bagi keluarga—mulai dari relaksasi pemandian air panas alami, spot foto ikonik, hingga kuliner hangat lereng pegunungan.</p>
+          <p>Kami mengajak Anda menyatu kembali dengan alam — berjalan di antara pepohonan, berendam di air panas alami, dan menikmati malam dengan api unggun. Setiap sudut dirancang untuk menciptakan momen yang berkesan.</p>
+          <ul class="feature-list">
+            <li>Udara sejuk pegunungan sepanjang hari</li>
+            <li>Aktivitas alam untuk semua kalangan</li>
+            <li>Layanan ramah dan personal</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PENGALAMAN ================= -->
+    <section class="section" id="pengalaman">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Pengalaman &amp; Aktivitas</p>
+          <h2>Lebih dari Sekadar Menginap</h2>
+          <p class="lead">Isi hari Anda dengan berbagai aktivitas alam yang seru dan bermakna bersama orang terdekat.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card" data-reveal>
+            <div class="media ratio-3x2"><img data-img="exp-campfire" src="assets/img/exp-campfire.jpg" alt="Hangat api unggun"></div>
+            <div class="card__body">
+              <h3 class="card__title">Hangat Api Unggun</h3>
+              <p class="card__text">Malam hangat bersama api unggun, jagung bakar, dan cerita di bawah langit Kamojang.</p>
+            </div>
+          </article>
+          <article class="card" data-reveal data-reveal-delay="1">
+            <div class="media ratio-3x2"><img data-img="exp-hotspring" src="assets/img/exp-hotspring.jpg" alt="Berendam air panas"></div>
+            <div class="card__body">
+              <h3 class="card__title">Berendam Air Panas</h3>
+              <p class="card__text">Melepas lelah di sumber air panas alami dengan pemandangan hijau.</p>
+            </div>
+          </article>
+          <article class="card" data-reveal data-reveal-delay="2">
+            <div class="media ratio-3x2" data-img="exp-walk"><img data-img="exp-walk" src="assets/img/exp-walk.jpg" alt="Guided walk"></div>
+            <div class="card__body">
+              <h3 class="card__title">Guided Walk &amp; Trekking</h3>
+              <p class="card__text">Jelajah hutan dipandu pemandu berpengalaman menuju titik terbaik.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FASILITAS ================= -->
+    <section class="section section--sand" id="fasilitas">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Fasilitas</p>
+          <h2>Semua yang Anda Butuhkan</h2>
+        </div>
+        <div class="fac-grid" id="facGrid">
+          <article class="fac-card fac-card--wide" data-reveal>
+            <div class="fac-card__media"><img data-img="exp-hotspring" src="assets/img/exp-hotspring.jpg" alt="Pemandian air panas alami" loading="lazy" onerror="this.style.display='none'"></div>
+            <div class="fac-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 3.4 6 6 6 9.3A6 6 0 0 1 6 12.3C6 9 9 6.4 12 3z"/><path d="M9 14.5c.8.8 2 .8 2.8 0"/><path d="M11.6 16.6c.8.8 2 .8 2.8 0"/><path d="M14.2 14.5c.8.8 2 .8 2.8 0"/></svg></div>
+            <div class="fac-card__body">
+              <h3>Pemandian Air Panas &amp; Sauna Alam</h3>
+              <p>Berendam hangat di air panas alami dan relaksasi sauna di tengah sejuknya alam.</p>
+            </div>
+          </article>
+          <article class="fac-card" data-reveal data-reveal-delay="1">
+            <div class="fac-card__media"><img data-img="gal-2" src="assets/img/gal-2.jpg" alt="Penginapan glamping dan area camping" loading="lazy" onerror="this.style.display='none'"></div>
+            <div class="fac-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 16.5 12 3.5l9.5 13"/><path d="M7 16.5V20h10v-3.5"/><path d="M9 16.5 10.5 12M15 16.5 13.5 12"/></svg></div>
+            <div class="fac-card__body">
+              <h3>Penginapan Glamping &amp; Camping Area</h3>
+              <p>Tenda glamping nyaman dan area berkemah di bawah langit Kamojang.</p>
+            </div>
+          </article>
+          <article class="fac-card" data-reveal data-reveal-delay="2">
+            <div class="fac-card__media"><img src="assets/img/fas-resto.jpg" alt="Crateria Resto &amp; Cafe" loading="lazy" onerror="this.style.display='none'"></div>
+            <div class="fac-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h13v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M17 11h1.2a2.3 2.3 0 0 1 0 4.6H17"/><path d="M8 6.5c0-1 1-1.4 1-2.4M11.5 6.5c0-1 1-1.4 1-2.4"/></svg></div>
+            <div class="fac-card__body">
+              <h3>Crateria Resto &amp; Cafe</h3>
+              <p>Menu hangat khas lereng pegunungan, kopi, dan pemandangan kawah.</p>
+            </div>
+          </article>
+          <article class="fac-card" data-reveal data-reveal-delay="3">
+            <div class="fac-card__media"><img src="assets/img/LMG06645.webp" alt="Glorious Bridge dan spot foto" loading="lazy" onerror="this.style.display='none'"></div>
+            <div class="fac-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.5h3l1.5-2.5h7L17 8.5h3a1 1 0 0 1 1 1V18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.2"/><path d="M8.2 16.5h7.6"/></svg></div>
+            <div class="fac-card__body">
+              <h3>Glorious Bridge &amp; Spot Foto</h3>
+              <p>Jembatan ikonik dan titik foto dengan latar alam yang memukau.</p>
+            </div>
+          </article>
+          <article class="fac-card fac-card--wide" data-reveal>
+            <div class="fac-card__media"><img src="assets/img/Kawah.webp" alt="Kawasan kawah alami Kamojang" loading="lazy" onerror="this.style.display='none'"></div>
+            <div class="fac-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20 9 9l3 5 2.5-4 6 10z"/><path d="M1.5 20h21"/><path d="M12 6.5c0-1.1 1-1.6 1-2.8"/><path d="M15 9c0-1.1 1-1.6 1-2.8"/></svg></div>
+            <div class="fac-card__body">
+              <h3>Kawasan Kawah Alami</h3>
+              <p>Jelajahi fenomena panas bumi dan lanskap kawah Kamojang yang menakjubkan.</p>
+            </div>
+          </article>
+          <article class="fac-card" data-reveal data-reveal-delay="1">
+            <div class="fac-card__media"><img src="assets/img/Saung.webp" alt="Saung dan gazebo bersantai" loading="lazy" onerror="this.style.display='none'"></div>
+            <div class="fac-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v13"/><path d="M3.5 9.5a8.5 8.5 0 0 1 17 0z"/><path d="M12 17v4"/><path d="M8.5 21h7"/></svg></div>
+            <div class="fac-card__body">
+              <h3>Saung &amp; Gazebo Bersantai</h3>
+              <p>Tempat teduh untuk bersantai, bercengkrama, dan menikmati suasana pegunungan.</p>
+            </div>
+          </article>
+          <article class="fac-card fac-card--wide" data-reveal data-reveal-delay="2">
+            <div class="fac-card__media"><img src="assets/img/LMG06696.webp" alt="Area parkir luas" loading="lazy" onerror="this.style.display='none'"></div>
+            <div class="fac-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17" rx="3"/><path d="M9 17V7h4.2a2.6 2.6 0 0 1 0 5.2H9"/></svg></div>
+            <div class="fac-card__body">
+              <h3>Area Parkir Luas</h3>
+              <p>Area parkir luas dan aman untuk kendaraan Anda.</p>
+            </div>
+          </article>
+          <article class="fac-card fac-card--wide" data-reveal data-reveal-delay="3">
+            <div class="fac-card__media"><img src="assets/img/LMG07456.webp" alt="Musholla" loading="lazy" onerror="this.style.display='none'"></div>
+            <div class="fac-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v2.2"/><path d="M6.5 12a5.5 5.5 0 0 1 11 0z"/><path d="M5 12h14v8.5H5z"/><path d="M10 20.5v-4a2 2 0 0 1 4 0v4"/><path d="M3 20.5h18"/></svg></div>
+            <div class="fac-card__body">
+              <h3>Musholla</h3>
+              <p>Musholla bersih dan nyaman untuk beribadah selama berwisata.</p>
+            </div>
+          </article>
+        </div>
+        <div class="fac-more">
+          <button class="btn btn--outline" id="facMore" type="button" aria-haspopup="dialog" aria-controls="facModal">
+            <span data-label>Lihat Semua Fasilitas</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONI ================= -->
+    <section class="section section--blue" id="testimoni">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Ulasan</p>
+          <h2>Ulasan &amp; Rating</h2>
+          <p class="rating-summary">
+            <strong class="rating-summary__score">4,9</strong>
+            <span class="rating-summary__stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.36 6.3 20.36l1.09-6.35-4.62-4.5 6.38-.93z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.36 6.3 20.36l1.09-6.35-4.62-4.5 6.38-.93z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.36 6.3 20.36l1.09-6.35-4.62-4.5 6.38-.93z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.36 6.3 20.36l1.09-6.35-4.62-4.5 6.38-.93z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.36 6.3 20.36l1.09-6.35-4.62-4.5 6.38-.93z"/></svg></span>
+          </p>
+        </div>
+        <div class="tcarousel" data-carousel>
+          <button class="tcarousel__btn tcarousel__btn--prev" type="button" data-carousel-prev aria-label="Ulasan sebelumnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+          </button>
+          <div class="tcarousel__viewport">
+            <div class="tcarousel__track" data-reviews></div>
+          </div>
+          <button class="tcarousel__btn tcarousel__btn--next" type="button" data-carousel-next aria-label="Ulasan berikutnya">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+          </button>
+          <div class="tcarousel__foot">
+            <div class="tcarousel__dots" data-carousel-dots></div>
+            <p class="tcarousel__counter"><span data-carousel-current>1</span> / <span data-carousel-total>20</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BERITA ================= -->
+    <section class="section section--cream" id="berita">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Berita &amp; Info</p>
+          <h2>Kabar Terbaru</h2>
+          <p class="lead">Ikuti promo, acara, dan informasi terbaru dari d'Glorious Crater Kamojang.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="news" data-reveal>
+            <div class="news__meta"><span class="news__date">5 Okt 2026</span><span class="news__tag">Promo</span></div>
+            <h3 class="news__title">Promo Libur Akhir Tahun: Diskon Menginap Hingga 20%</h3>
+            <p class="news__text">Nikmati potongan harga spesial untuk pemesanan villa dan glamping selama periode libur akhir tahun.</p>
+            <a class="news__link" href="reservasi.html">Baca Selengkapnya
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="news" data-reveal data-reveal-delay="1">
+            <div class="news__meta"><span class="news__date">22 Sep 2026</span><span class="news__tag">Acara</span></div>
+            <h3 class="news__title">Malam Api Unggun &amp; Musik Akustik Tiap Akhir Pekan</h3>
+            <p class="news__text">Rasakan suasana hangat dengan api unggun dan penampilan musik akustik setiap Sabtu malam.</p>
+            <a class="news__link" href="reservasi.html">Baca Selengkapnya
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="news" data-reveal data-reveal-delay="2">
+            <div class="news__meta"><span class="news__date">8 Sep 2026</span><span class="news__tag">Info</span></div>
+            <h3 class="news__title">Pemandian Air Panas &amp; Sauna Alam Kini Dibuka</h3>
+            <p class="news__text">Fasilitas pemandian air panas alami dan sauna kini siap menemani waktu relaksasi Anda.</p>
+            <a class="news__link" href="reservasi.html">Baca Selengkapnya
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALERI PREVIEW ================= -->
+    <section class="section" id="galeri">
+      <div class="container">
+        <div class="section-head section-head--center" data-reveal>
+          <p class="eyebrow">Galeri</p>
+          <h2>Potret Keindahan Kamojang</h2>
+        </div>
+        <div class="gallery-grid" data-gallery>
+          <div class="gallery-item" data-category="alam" data-type="image" data-src="assets/img/Kawah.webp" data-caption="Pemandangan kawah Kamojang di pagi hari" data-reveal>
+            <div class="media ratio-4x3"><img src="assets/img/Kawah.webp" alt="Pemandangan kawah Kamojang"></div>
+            <div class="gallery-item__overlay"><span>Pemandangan kawah Kamojang di pagi hari</span></div>
+          </div>
+          <div class="gallery-item" data-category="akomodasi" data-type="image" data-img="gal-2" data-src="assets/img/gal-2.jpg" data-caption="Glamping Kahuripan di tengah alam" data-reveal data-reveal-delay="1">
+            <div class="media ratio-4x3"><img data-img="gal-2" src="assets/img/gal-2.jpg" alt="Glamping Kahuripan"></div>
+            <div class="gallery-item__overlay"><span>Glamping Kahuripan di tengah alam</span></div>
+          </div>
+          <div class="gallery-item" data-category="aktivitas" data-type="image" data-img="gal-3" data-src="assets/img/gal-3.jpg" data-caption="Api unggun hangat malam hari" data-reveal data-reveal-delay="2">
+            <div class="media ratio-4x3"><img data-img="gal-3" src="assets/img/gal-3.jpg" alt="Api unggun malam hari"></div>
+            <div class="gallery-item__overlay"><span>Api unggun hangat malam hari</span></div>
+          </div>
+        </div>
+        <div class="gallery-more" data-reveal>
+          <a class="btn btn--outline" href="galeri.html">
+            <span data-label>Akses Seluruh Foto &amp; Video</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+          <p>Penginapan alam &amp; glamping di ketinggian 1.730 mdpl kawasan Kamojang. LETS CREATE A GLORIOUS MOMENT.</p>
+          <div class="socials">
+            <a data-instagram href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a data-facebook href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.2c0-.9.3-1.5 1.6-1.5H16.5V5.1C16.2 5 15.3 5 14.3 5c-2 0-3.4 1.2-3.4 3.5V11H8.5v3h2.4v7z"/></svg></a>
+            <a data-wa href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 0 1 0 16.4 8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.3c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Lokasi</h4>
+          <div class="footer__map">
+            <iframe data-maps-embed title="Peta lokasi d'Glorious Crater Kamojang" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <a class="footer__map-link" data-maps-directions href="#">Petunjuk Arah &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year></span> d'Glorious Crater Kamojang. Seluruh hak cipta dilindungi.</span>
+        <span>Mekarwangi &middot; Ibun &middot; Bandung &middot; Jawa Barat</span>
+      </div>
+    </div>
+  </footer>
+
+  
+
+
+  <!-- Daftar lengkap fasilitas (mobile) -->
+  <div class="fac-modal" id="facModal" hidden role="dialog" aria-modal="true" aria-labelledby="facModalTitle">
+    <div class="fac-modal__backdrop" data-close></div>
+    <div class="fac-modal__panel">
+      <div class="fac-modal__head">
+        <h3 id="facModalTitle">Semua Fasilitas</h3>
+        <button class="fac-modal__close" type="button" data-close aria-label="Tutup">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="fac-modal__list"></div>
+    </div>
+  </div>
+
+  <!-- ================= PRATINJAU 360 ================= -->
+  <div class="pano" id="pano" hidden>
+    <div class="pano__backdrop" data-pano-close></div>
+    <div class="pano__dialog" role="dialog" aria-modal="true" aria-label="Virtual tour 360 derajat">
+      <button class="pano__close pano__fs" type="button" data-pano-full aria-label="Layar penuh" title="Layar penuh">
+        <svg class="ic-enter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9V3h6"/><path d="M21 9V3h-6"/><path d="M3 15v6h6"/><path d="M21 15v6h-6"/></svg>
+        <svg class="ic-exit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v6H3"/><path d="M15 3v6h6"/><path d="M9 21v-6H3"/><path d="M15 21v-6h6"/></svg>
+      </button>
+      <button class="pano__close" type="button" data-pano-close aria-label="Tutup virtual tour">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="pano__scenes" id="panoScenes" hidden>
+        <div class="pano__scene" data-src="assets/img/360/gerbang/Akses Tur.webp" data-yaw="0" data-label="Gerbang Utama"></div>
+      </div>
+      <div class="pano__stage" id="panoStage" tabindex="0" role="img" aria-label="Pemandangan 360 derajat, seret ke kiri atau kanan untuk memutar">
+        <div class="pano__strip" id="panoStrip"></div>
+        <div class="pano__hotspots" id="panoHotspots"></div>
+        <nav class="pano__tabs" id="panoTabs" role="tablist" aria-label="Pilih ruangan" hidden></nav>
+        <div class="pano__popup" id="panoInfo" hidden>
+          <button class="pano__popup-scrim" type="button" data-info-close aria-label="Tutup penjelasan"></button>
+          <div class="pano__popup-panel" role="dialog" aria-labelledby="panoPopTitle" tabindex="-1">
+            <button class="pano__popup-close" type="button" data-info-close aria-label="Tutup penjelasan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+            <span class="pano__popup-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 11.3v5.2"/><circle cx="12" cy="7.9" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+            <h4 class="pano__info-title" id="panoPopTitle"></h4>
+            <p class="pano__info-text"></p>
+          </div>
+        </div>
+        <p class="pano__hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5 5 9l4 4"/><path d="M15 5l4 4-4 4"/><path d="M5 9h14"/></svg>
+          Seret untuk memutar · klik ikon i atau panah
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/reviews.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header-scroll.js"></script>
+  <script src="assets/js/nav-hero.js"></script>
+  <script src="assets/js/fasilitas-toggle.js"></script>
+  <script src="assets/data/hotspots.js"></script>
+</body>
+</html>

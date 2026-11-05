@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Akses Tur 360° — d'Glorious Crater Kamojang</title>
+  <meta name="description" content="Jelajahi d'Glorious Crater Kamojang dalam tampilan 360 derajat, mulai dari Gerbang Utama.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500;600&display=optional" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <style>
+    :root { --ink:#061a26; --gold:#e7a626; --blue:#006094; --font:'Poppins',system-ui,sans-serif; --display:'Cormorant Garamond',Georgia,serif; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; background: var(--ink); color: #fff; font-family: var(--font); overflow: hidden; }
+    #view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+    #view.is-drag { cursor: grabbing; }
+
+    .bar { position: fixed; left: 0; right: 0; top: 0; z-index: 5; display: flex; align-items: center; gap: .8rem;
+           padding: calc(env(safe-area-inset-top, 0px) + .8rem) .9rem .8rem;
+           background: linear-gradient(to bottom, rgba(6,26,38,.72), rgba(6,26,38,0)); pointer-events: none; }
+    .bar > * { pointer-events: auto; }
+    .chip { display: inline-flex; align-items: center; gap: .45rem; padding: .55rem .95rem; border-radius: 999px;
+            border: 1px solid rgba(255,255,255,.55); background: rgba(6,26,38,.55); backdrop-filter: blur(8px);
+            color: #fff; font: 600 .8rem var(--font); letter-spacing: .03em; text-decoration: none; cursor: pointer;
+            transition: background .25s, color .25s, border-color .25s; }
+    .chip:hover, .chip:focus-visible { background: var(--gold); border-color: var(--gold); color: var(--ink); outline: none; }
+    .chip svg { width: 18px; height: 18px; flex: none; }
+    .title { flex: 1; min-width: 0; }
+    .title small { display: block; color: var(--gold); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; }
+    .title strong { display: block; font: 700 1.35rem/1.1 var(--display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .iconbtn { width: 42px; height: 42px; padding: 0; justify-content: center; }
+    .iconbtn .ic-exit { display: none; }
+    .is-full .iconbtn .ic-enter { display: none; }
+    .is-full .iconbtn .ic-exit { display: block; }
+
+    .hint { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 1.1rem); transform: translateX(-50%); z-index: 5;
+            display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1rem; border-radius: 999px; white-space: nowrap;
+            background: rgba(6,26,38,.6); backdrop-filter: blur(8px); font-size: .76rem; color: rgba(255,255,255,.9);
+            transition: opacity .6s; pointer-events: none; }
+    .hint.is-hidden { opacity: 0; }
+
+    .state { position: fixed; inset: 0; z-index: 4; display: grid; place-items: center; text-align: center; padding: 2rem;
+             background: radial-gradient(circle at 50% 40%, #0b3348, var(--ink)); }
+    .state[hidden] { display: none; }
+    /* pindah scene: overlay tipis (hanya spinner), panorama lama tetap terlihat */
+    .state.is-soft { background: rgba(6,26,38,.35); pointer-events: none; }
+    .state.is-soft h1, .state.is-soft p { display: none; }
+    .state p { max-width: 460px; margin: .6rem auto 0; font-size: .9rem; color: rgba(255,255,255,.8); line-height: 1.6; }
+    .state h1 { margin: 0; font: 700 1.9rem/1.1 var(--display); }
+    .state code { display: block; margin-top: .5rem; padding: .5rem .7rem; border-radius: 8px; background: rgba(255,255,255,.08); font-size: .76rem; word-break: break-all; }
+    .spin { width: 46px; height: 46px; margin: 0 auto 1.1rem; border-radius: 50%; border: 3px solid rgba(255,255,255,.2); border-top-color: var(--gold); animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .spin { animation-duration: 3s; } }
+
+    /* ---- Hotspot ---- */
+    #spots { position: fixed; inset: 0; z-index: 3; pointer-events: none; overflow: hidden; }
+    .spot { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; align-items: center; gap: .3rem;
+            padding: 0; border: 0; background: none; color: #fff; font-family: var(--font); cursor: pointer; pointer-events: auto;
+            will-change: transform; -webkit-tap-highlight-color: transparent; }
+    .spot__ic { display: block; }
+    .spot__ic img { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; user-select: none; }
+    .spot__lb { position: absolute; top: 100%; left: 50%; margin-top: .25rem; white-space: nowrap; max-width: none; translate: -50% 0; padding: .18rem .6rem; border-radius: 999px; background: rgba(6,26,38,.78); font-size: .68rem; font-weight: 500;
+                line-height: 1.3; text-align: center; opacity: 0; transform: translateY(-3px); transition: opacity .2s, transform .2s; pointer-events: none; }
+    .spot:hover .spot__lb, .spot:focus-visible .spot__lb { opacity: 1; transform: none; }
+    .spot:focus-visible { outline: none; }
+
+    .card { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 4rem); transform: translateX(-50%); z-index: 6;
+            width: min(92vw, 360px); padding: .9rem 2.6rem .9rem 1rem; border-radius: 14px; background: rgba(6,26,38,.88);
+            backdrop-filter: blur(10px); border: 1px solid rgba(231,166,38,.55); box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+    .card[hidden], .toast[hidden], .chip[hidden] { display: none; }
+    .card small { display: block; color: var(--gold); font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; }
+    .card strong { display: block; font: 700 1.25rem/1.2 var(--display); }
+    .card p { margin: .35rem 0 0; font-size: .82rem; line-height: 1.5; color: rgba(255,255,255,.85); }
+    .card button { position: absolute; top: .5rem; right: .5rem; width: 32px; height: 32px; border: 0; border-radius: 50%;
+                   background: rgba(255,255,255,.12); color: #fff; font-size: 1.1rem; cursor: pointer; }
+    .card button:hover { background: var(--gold); color: var(--ink); }
+    .toast { position: fixed; left: 50%; top: calc(env(safe-area-inset-top, 0px) + 5rem); transform: translateX(-50%); z-index: 7;
+             padding: .55rem 1rem; border-radius: 999px; background: rgba(6,26,38,.9); border: 1px solid var(--gold); font-size: .8rem; }
+  </style>
+</head>
+<body>
+  <canvas id="view" aria-label="Pemandangan 360 derajat Gerbang Utama, seret untuk memutar" role="img" tabindex="0"></canvas>
+  <div id="spots"></div>
+  <div class="card" id="card" hidden role="dialog" aria-live="polite"><small>Informasi</small><strong id="cardTitle"></strong><p id="cardText" hidden></p><button type="button" id="cardClose" aria-label="Tutup">&times;</button></div>
+  <div class="toast" id="toast" hidden role="status"></div>
+
+  <div class="bar">
+    <a class="chip" href="index.html" aria-label="Kembali ke Beranda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      Beranda
+    </a>
+    <button class="chip" id="homeScene" type="button" hidden>Gerbang Utama</button>
+    <div class="title"><small>Akses Tur 360°</small><strong id="sceneTitle">Gerbang Utama</strong></div>
+    <button class="chip iconbtn" id="fsBtn" type="button" aria-label="Layar penuh" title="Layar penuh">
+      <svg class="ic-enter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9V3h6"/><path d="M21 9V3h-6"/><path d="M3 15v6h6"/><path d="M21 15v6h-6"/></svg>
+      <svg class="ic-exit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v6H3"/><path d="M15 3v6h6"/><path d="M9 21v-6H3"/><path d="M15 21v-6h6"/></svg>
+    </button>
+  </div>
+
+  <p class="hint" id="hint">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5 5 9l4 4"/><path d="M15 5l4 4-4 4"/><path d="M5 9h14"/></svg>
+    Seret untuk memutar · cubit atau gulir untuk zoom · ketuk ikon untuk info
+  </p>
+
+  <div class="state" id="loading"><div><div class="spin" aria-hidden="true"></div><h1>Memuat tur 360°</h1><p>Sebentar ya, foto panorama sedang disiapkan.</p></div></div>
+  <div class="state" id="failed" hidden>
+    <div>
+      <h1>Foto panorama belum ditemukan</h1>
+      <p>Pastikan file panorama Gerbang Utama ada di salah satu lokasi berikut, atau ubah daftar <b>CANDIDATES</b> di bagian skrip halaman ini.</p>
+      <code id="triedList"></code>
+      <p><a class="chip" href="index.html" style="margin-top:.6rem">Kembali ke Beranda</a></p>
+    </div>
+  </div>
+
+  <script src="assets/data/hotspots.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    /* ---- Pengaturan: foto panorama equirectangular (rasio 2:1) Gerbang Utama ---- */
+    var CANDIDATES = [
+      'assets/img/360/lobby/GerbangUtama.webp',
+      'assets/img/360/lobby/AksesTur.webp',
+      'assets/img/360/gerbang/AksesTur-8192.webp',
+      'assets/img/360/AksesTur-8192.webp',
+      'assets/img/360/gerbang/AksesTur.jpg',
+      'assets/img/360/AksesTur.jpg',
+      'assets/img/AksesTur.webp'
+    ];
+    var qs = new URLSearchParams(location.search);
+    if (qs.get('src')) CANDIDATES.unshift(qs.get('src'));
+
+    var canvas = document.getElementById('view');
+    var loading = document.getElementById('loading');
+    var failed = document.getElementById('failed');
+    var hint = document.getElementById('hint');
+    var gl = canvas.getContext('webgl', { antialias: false, alpha: false }) || canvas.getContext('experimental-webgl');
+
+    function fail(list) {
+      loading.hidden = true;
+      document.getElementById('triedList').textContent = (list || CANDIDATES).join('\n');
+      document.getElementById('triedList').style.whiteSpace = 'pre-line';
+      failed.hidden = false;
+    }
+    if (!gl) { fail(['Peramban ini tidak mendukung WebGL.']); return; }
+
+    /* ---- Shader: memetakan foto equirectangular ke tampilan perspektif ---- */
+    function sh(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+    var prog = gl.createProgram();
+    gl.attachShader(prog, sh(gl.VERTEX_SHADER, 'attribute vec2 p; varying vec2 v; void main(){ v=p; gl_Position=vec4(p,0.,1.); }'));
+    gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, [
+      'precision highp float; varying vec2 v; uniform sampler2D tex;',
+      'uniform float yaw, pitch, tanHalf, aspect;',
+      'const float PI = 3.14159265359;',
+      'void main(){',
+      '  vec3 r = vec3(v.x * aspect * tanHalf, v.y * tanHalf, -1.0);',
+      '  float cp = cos(pitch), sp = sin(pitch);',
+      '  r = vec3(r.x, r.y * cp - r.z * sp, r.y * sp + r.z * cp);',
+      '  float cy = cos(yaw), sy = sin(yaw);',
+      '  r = vec3(r.x * cy - r.z * sy, r.y, r.x * sy + r.z * cy);',
+      '  r = normalize(r);',
+      '  float lon = atan(r.x, -r.z);',
+      '  float lat = asin(clamp(r.y, -1.0, 1.0));',
+      '  gl_FragColor = texture2D(tex, vec2(lon / (2.0 * PI) + 0.5, 0.5 - lat / PI));',
+      '}'
+    ].join('\n')));
+    gl.linkProgram(prog); gl.useProgram(prog);
+    var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(prog, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    var U = {}; ['yaw','pitch','tanHalf','aspect'].forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
+
+    /* ---- Status tampilan ---- */
+    var yaw = 0, pitch = 0, fov = 80, auto = true, ready = false, dirty = true;
+    var DEG = Math.PI / 180;
+    function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
+      if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; gl.viewport(0, 0, w, h); }
+      dirty = true;
+    }
+    window.addEventListener('resize', resize);
+
+    function draw() {
+      gl.uniform1f(U.yaw, yaw); gl.uniform1f(U.pitch, pitch);
+      gl.uniform1f(U.tanHalf, Math.tan(fov * DEG / 2));
+      gl.uniform1f(U.aspect, canvas.width / Math.max(1, canvas.height));
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    }
+    var last = 0;
+    function frame(t) {
+      requestAnimationFrame(frame);
+      if (!ready) return;
+      var dt = Math.min(0.05, (t - last) / 1000 || 0); last = t;
+      if (auto) { yaw += dt * 0.08; dirty = true; }
+      if (dirty) { dirty = false; draw(); updateSpots(); }
+    }
+
+    /* ---- Interaksi: seret, cubit, gulir, keyboard ---- */
+    function stopAuto() { auto = false; hint.classList.add('is-hidden'); }
+    var pts = {}, pinch = 0;
+    function count() { return Object.keys(pts).length; }
+    function limitPitch() { var lim = (90 - fov / 2) * DEG; pitch = clamp(pitch, -lim, lim); }
+    canvas.addEventListener('pointerdown', function (e) {
+      canvas.setPointerCapture(e.pointerId); pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+      canvas.classList.add('is-drag'); stopAuto();
+      if (count() === 2) { var a = Object.values(pts); pinch = Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y); }
+    });
+    canvas.addEventListener('pointermove', function (e) {
+      var p = pts[e.pointerId]; if (!p) return;
+      var dx = e.clientX - p.x, dy = e.clientY - p.y; p.x = e.clientX; p.y = e.clientY;
+      if (count() === 2) {
+        var a = Object.values(pts), d = Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y);
+        if (pinch) { fov = clamp(fov * pinch / d, 35, 100); limitPitch(); }
+        pinch = d;
+      } else {
+        var k = (fov * DEG) / canvas.clientHeight;      // radian per piksel, mengikuti zoom
+        yaw -= dx * k; pitch += dy * k; limitPitch();
+      }
+      dirty = true;
+    });
+    function up(e) { delete pts[e.pointerId]; pinch = 0; if (!count()) canvas.classList.remove('is-drag'); }
+    canvas.addEventListener('pointerup', up); canvas.addEventListener('pointercancel', up);
+    canvas.addEventListener('wheel', function (e) {
+      e.preventDefault(); stopAuto(); fov = clamp(fov + e.deltaY * 0.05, 35, 100); limitPitch(); dirty = true;
+    }, { passive: false });
+    canvas.addEventListener('keydown', function (e) {
+      var s = 6 * DEG, ok = true;
+      if (e.key === 'ArrowLeft') yaw -= s; else if (e.key === 'ArrowRight') yaw += s;
+      else if (e.key === 'ArrowUp') pitch += s; else if (e.key === 'ArrowDown') pitch -= s;
+      else if (e.key === '+' || e.key === '=') fov = clamp(fov - 6, 35, 100);
+      else if (e.key === '-') fov = clamp(fov + 6, 35, 100); else ok = false;
+      if (ok) { e.preventDefault(); stopAuto(); limitPitch(); dirty = true; }
+    });
+
+    /* ---- Layar penuh ---- */
+    var fsBtn = document.getElementById('fsBtn'), root = document.documentElement;
+    function isFull() { return document.fullscreenElement || document.webkitFullscreenElement; }
+    fsBtn.addEventListener('click', function () {
+      if (isFull()) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); }
+      else { var f = root.requestFullscreen || root.webkitRequestFullscreen; if (f) f.call(root); }
+    });
+    function fsState() { document.body.classList.toggle('is-full', !!isFull()); setTimeout(resize, 120); }
+    document.addEventListener('fullscreenchange', fsState); document.addEventListener('webkitfullscreenchange', fsState);
+
+    /* ---- Data hotspot (assets/data/hotspots.js) ---- */
+    var START = 'gerbang-utama', scene = START;
+    var HS = window.HOTSPOTS || {}, FILES = window.HOTSPOT_FILES || {}, TITLES = window.HOTSPOT_TITLES || {}, LOCS = window.HOTSPOT_LOCATIONS || {};
+    var spotsEl = document.getElementById('spots'), card = document.getElementById('card'), toastEl = document.getElementById('toast');
+    var titleEl = document.getElementById('sceneTitle'), homeBtn = document.getElementById('homeScene');
+    var spots = [], toastTimer = 0;
+
+    function toast(msg) { toastEl.textContent = msg; toastEl.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(function () { toastEl.hidden = true; }, 3200); }
+    function closeCard() { card.hidden = true; }
+    document.getElementById('cardClose').addEventListener('click', closeCard);
+    function showCard(h) {
+      document.getElementById('cardTitle').textContent = h.label;
+      var t = document.getElementById('cardText'); t.textContent = h.text || ''; t.hidden = !h.text;
+      card.hidden = false;
+    }
+    function dirOf(id) {
+      for (var k in LOCS) if (LOCS[k].rooms && LOCS[k].rooms.indexOf(id) > -1) return LOCS[k].dir;
+      return 'assets/img/360/';
+    }
+
+    function buildSpots() {
+      spotsEl.innerHTML = ''; spots = []; closeCard();
+      (HS[scene] || []).forEach(function (h) {
+        var nav = h.type === 'nav';
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'spot spot--' + (nav ? 'nav' : 'info');
+        b.setAttribute('aria-label', (nav ? 'Pindah ke: ' : 'Info: ') + h.label);
+        var box = document.createElement('span'); box.className = 'spot__ic';
+        var px = Math.round(h.size || 80); box.style.width = box.style.height = px + 'px';
+        if (h.icon) {
+          var im = new Image(); im.alt = ''; im.draggable = false; im.src = h.icon;
+          im.onerror = function () { im.remove(); }; box.appendChild(im);
+        }
+        var lb = document.createElement('span'); lb.className = 'spot__lb'; lb.textContent = h.label;
+        b.appendChild(box); b.appendChild(lb);
+        var yw = h.yaw * DEG, pt = h.pitch * DEG;
+        spots.push({ el: b, x: Math.cos(pt) * Math.sin(yw), y: Math.sin(pt), z: -Math.cos(pt) * Math.cos(yw) });
+        b.addEventListener('click', function (e) {
+          e.stopPropagation(); stopAuto();
+          if (nav) goTo(h.target); else showCard(h);
+        });
+        spotsEl.appendChild(b);
+      });
+      dirty = true;
+    }
+
+    /* proyeksi yaw/pitch -> piksel layar (kebalikan dari shader) */
+    function updateSpots() {
+      if (!spots.length) return;
+      var cp = Math.cos(pitch), sp = Math.sin(pitch), cy = Math.cos(yaw), sy = Math.sin(yaw);
+      var th = Math.tan(fov * DEG / 2), W = canvas.clientWidth, H = canvas.clientHeight, asp = W / Math.max(1, H);
+      spots.forEach(function (s) {
+        var x1 = s.x * cy + s.z * sy, z1 = -s.x * sy + s.z * cy;
+        var y0 = s.y * cp + z1 * sp, z0 = -s.y * sp + z1 * cp;
+        var nx = x1 / -z0 / (asp * th), ny = y0 / -z0 / th;
+        if (z0 > -0.05 || Math.abs(nx) > 1.15 || Math.abs(ny) > 1.15) { s.el.style.display = 'none'; return; }
+        s.el.style.display = '';
+        s.el.style.transform = 'translate(' + ((nx + 1) / 2 * W).toFixed(1) + 'px,' + ((1 - ny) / 2 * H).toFixed(1) + 'px) translate(-50%,-50%)';
+      });
+    }
+
+    /* ---- Muat foto panorama per scene ---- */
+    var tex = null;
+    function applyImage(img) {
+      var max = gl.getParameter(gl.MAX_TEXTURE_SIZE), src = img;
+      if (img.naturalWidth > max) {                         // perkecil bila melebihi batas GPU perangkat
+        var c = document.createElement('canvas'), r = max / img.naturalWidth;
+        c.width = max; c.height = Math.round(img.naturalHeight * r);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); src = c;
+      }
+      if (!tex) {
+        tex = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      } else gl.bindTexture(gl.TEXTURE_2D, tex);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, src);
+    }
+
+    /* Cache gambar panorama (sudah didecode) + prefetch scene tetangga supaya perpindahan instan */
+    var lowMem = (navigator.deviceMemory && navigator.deviceMemory < 6) || (window.matchMedia && matchMedia('(pointer: coarse)').matches);
+    var CAP = lowMem ? 3 : 5;                      // jumlah panorama yang disimpan di memori
+    var cache = {}, order = [], pending = {}, loadToken = 0, softTimer = 0, startUrl = null, currentUrl = null;
+
+    function touch(url) { var i = order.indexOf(url); if (i > -1) order.splice(i, 1); order.push(url); }
+    function evict(keep) {
+      while (order.length > CAP) {
+        var idx = -1;
+        for (var i = 0; i < order.length; i++) if (keep.indexOf(order[i]) < 0) { idx = i; break; }
+        if (idx < 0) break;
+        delete cache[order[idx]]; order.splice(idx, 1);
+      }
+    }
+    function getImage(url) {
+      if (cache[url]) { touch(url); return Promise.resolve(cache[url]); }
+      if (pending[url]) return pending[url];
+      var p = new Promise(function (resolve, reject) {
+        var img = new Image(); img.decoding = 'async';
+        img.onload = function () {
+          var done = function () { cache[url] = img; touch(url); delete pending[url]; resolve(img); };
+          if (img.decode) img.decode().then(done, done); else done();   // decode di luar thread utama
+        };
+        img.onerror = function () { delete pending[url]; reject(new Error(url)); };
+        img.src = url;
+      });
+      pending[url] = p; return p;
+    }
+    function neighborUrls() {
+      var out = [];
+      (HS[scene] || []).forEach(function (h) {
+        if (h.type === 'nav' && FILES[h.target]) {
+          var u = dirOf(h.target) + FILES[h.target];
+          if (out.indexOf(u) < 0) out.push(u);
+        }
+      });
+      return out.slice(0, CAP - 1);
+    }
+    function prefetchNeighbors() {
+      var urls = neighborUrls(), keep = [currentUrl].concat(urls);
+      evict(keep);
+      var chain = Promise.resolve();
+      urls.forEach(function (u) {                  // satu per satu agar tidak berebut bandwidth
+        chain = chain.then(function () { return getImage(u).catch(function () {}); }).then(function () { evict(keep); });
+      });
+    }
+    function schedulePrefetch() {
+      var run = function () { prefetchNeighbors(); };
+      if (window.requestIdleCallback) requestIdleCallback(run, { timeout: 1500 }); else setTimeout(run, 400);
+    }
+    function hideLoading() { clearTimeout(softTimer); loading.hidden = true; loading.classList.remove('is-soft'); }
+
+    function loadScene(id, first) {
+      var list = id === START ? (startUrl ? [startUrl] : CANDIDATES) : (FILES[id] ? [dirOf(id) + FILES[id]] : []);
+      var token = ++loadToken;
+      clearTimeout(softTimer);
+      if (first) { loading.classList.remove('is-soft'); loading.hidden = false; }
+      else {
+        var ready0 = list.length && cache[list[0]];
+        if (!ready0) softTimer = setTimeout(function () {   // tampilkan spinner hanya jika memuat > 250 ms
+          if (token === loadToken) { loading.classList.add('is-soft'); loading.hidden = false; }
+        }, 250);
+      }
+      (function tryLoad(i) {
+        if (token !== loadToken) return;
+        if (i >= list.length) {
+          hideLoading();
+          if (first) fail(list.length ? list : ['Scene "' + id + '" tidak ada di hotspots.js']);
+          else toast('Foto panorama untuk scene ini belum ditemukan.');
+          return;
+        }
+        getImage(list[i]).then(function (img) {
+          if (token !== loadToken) return;
+          applyImage(img); scene = id; currentUrl = list[i]; if (id === START) startUrl = list[i];
+          yaw = 0; pitch = 0; fov = 80;
+          titleEl.textContent = TITLES[id] || id; homeBtn.hidden = (id === START);
+          buildSpots(); ready = true; dirty = true; hideLoading(); resize();
+          schedulePrefetch();
+        }, function () { tryLoad(i + 1); });
+      })(0);
+    }
+    function goTo(id) {
+      if (!id || !FILES[id]) { toast('Scene tujuan belum tersedia.'); return; }
+      loadScene(id, false);
+    }
+    homeBtn.addEventListener('click', function () { goTo(START); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeCard(); });
+    loadScene(START, true);
+
+    resize(); requestAnimationFrame(frame);
+  })();
+  </script>
+</body>
+</html>

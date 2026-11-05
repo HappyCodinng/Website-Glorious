@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor Testimoni — d'Glorious</title>
+<style>
+:root{--blue:#006094;--gold:#e7a626;--ink:#0f2a3a;--body:#5a6b78;--line:#dfe7ed;--bg:#f4f7f9;--red:#c0392b;--green:#1f8a5b}
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--bg)}
+button,input,textarea{font:inherit;color:inherit}
+header{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;padding:.7rem 1.2rem;background:#fff;border-bottom:1px solid var(--line)}
+header h1{font-size:1.05rem;margin:0 auto 0 0}header h1 small{display:block;font-weight:400;color:var(--body);font-size:.75rem}
+.btn{border:1px solid var(--line);background:#fff;padding:.5rem .9rem;border-radius:9px;cursor:pointer;font-weight:600}
+.btn:hover{border-color:var(--blue);color:var(--blue)}.btn--pri{background:var(--blue);border-color:var(--blue);color:#fff}.btn--pri:hover{color:#fff;opacity:.9}
+.btn--sm{padding:.2rem .5rem;font-size:.8rem;font-weight:500}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;width:100%}.chip{padding:.15rem .6rem;border-radius:99px;background:#eef3f6;font-size:.76rem;color:var(--body)}
+.chip.on{background:#fff3d6;color:#8a5d00}.chip.ok{background:#e3f5ec;color:var(--green)}
+#draft{display:none;margin:.8rem 1.2rem 0;padding:.6rem 1rem;background:#fff3d6;border-radius:9px}
+main{display:grid;grid-template-columns:320px 1fr;gap:1.2rem;padding:1.2rem;align-items:start}
+aside,.panel{background:#fff;border:1px solid var(--line);border-radius:14px}
+aside{position:sticky;top:112px;max-height:calc(100vh - 130px);display:flex;flex-direction:column}
+.tools{display:flex;gap:.5rem;padding:.7rem;border-bottom:1px solid var(--line)}.tools input{flex:1;min-width:0}
+input[type=text],input[type=search],textarea{width:100%;padding:.5rem .7rem;border:1px solid var(--line);border-radius:9px;background:#fff}
+input:focus,textarea:focus{outline:2px solid rgba(0,96,148,.25);border-color:var(--blue)}
+#list{overflow:auto;margin:0;padding:.4rem;list-style:none}
+#list li{display:flex;align-items:center;gap:.6rem;padding:.5rem;border-radius:10px;cursor:pointer;border:1px solid transparent}
+#list li:hover{background:var(--bg)}#list li.sel{background:#e8f2f8;border-color:#bcd7e6}
+.av{flex:none;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:.72rem;font-weight:700}
+.nm{flex:1;min-width:0}.nm b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nm span{font-size:.74rem;color:var(--gold)}
+.tag{font-size:.65rem;padding:0 .4rem;border-radius:6px;background:#fff3d6;color:#8a5d00;margin-left:.3rem}.tag.new{background:#e3f5ec;color:var(--green)}
+.acts{display:none;gap:.2rem}#list li:hover .acts,#list li.sel .acts{display:flex}
+.panel{padding:1.2rem}.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+label{display:block;font-weight:600;font-size:.8rem;margin:.8rem 0 .25rem}.row{display:grid;grid-template-columns:1fr 90px;gap:.6rem}
+.stars{display:flex;gap:.15rem}.stars button{border:0;background:none;font-size:1.6rem;line-height:1;cursor:pointer;color:#cdd6dc;padding:0}.stars button.on{color:var(--gold)}
+.mrow{display:grid;grid-template-columns:1fr 1fr auto;gap:.4rem;margin-bottom:.4rem}
+.err{color:var(--red);font-size:.78rem;min-height:1em}.cnt{float:right;font-weight:400;color:var(--body)}
+.pv{background:linear-gradient(135deg,#00496f,#006094 60%,#0d6b6b);padding:1.2rem;border-radius:14px;position:sticky;top:112px}
+.pv h3{margin:0 0 .6rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:1.1rem 1.2rem;color:#fff;display:flex;flex-direction:column;gap:.55rem}
+.card .mk{font:2rem/.8 Georgia,serif;color:var(--gold)}.card .st{color:var(--gold);letter-spacing:.1em}.card .st i{color:rgba(255,255,255,.3);font-style:normal}
+.card p{margin:0;font-size:.9rem;line-height:1.65;color:rgba(255,255,255,.92)}
+.card ul{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}.card li{border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:.2rem .65rem;font-size:.74rem;background:rgba(255,255,255,.08)}
+.card li span{font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);margin-right:.4rem}
+.card footer{display:flex;align-items:center;gap:.6rem;font-size:.85rem}.card footer .av{background:var(--gold);color:#3a2a00;width:36px;height:36px}.card footer small{display:block;color:rgba(255,255,255,.6)}
+.hint{font-size:.78rem;color:var(--body);margin-top:1rem}
+@media(max-width:1000px){main{grid-template-columns:1fr}aside,.pv{position:static;max-height:360px}.cols{grid-template-columns:1fr}.pv{order:-1}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Editor Testimoni<small>Hanya mengubah satu file: <code>assets/js/reviews.js</code></small></h1>
+  <button class="btn" id="btnImport">Impor reviews.js</button><input type="file" id="file" accept=".js,text/javascript" hidden>
+  <button class="btn" id="btnCopy">Salin kode</button>
+  <button class="btn btn--pri" id="btnDl">Unduh reviews.js</button>
+  <div class="chips" id="chips"></div>
+</header>
+<div id="draft">Ada draf yang belum diekspor. <button class="btn btn--sm" id="dRestore">Pulihkan</button> <button class="btn btn--sm" id="dDrop">Buang</button></div>
+<main>
+  <aside>
+    <div class="tools"><input type="search" id="q" placeholder="Cari nama / isi…"><button class="btn btn--sm" id="add">+ Tambah</button></div>
+    <ul id="list"></ul>
+  </aside>
+  <div>
+    <div class="cols">
+      <div class="panel" id="form"></div>
+      <div class="pv"><h3>Pratinjau</h3><div id="pv"></div></div>
+    </div>
+    <p class="hint">Alur: edit di sini → <b>Unduh reviews.js</b> → timpa file lama di <code>assets/js/</code>. Tidak ada file lain yang perlu disentuh. Draf tersimpan otomatis di browser ini.</p>
+  </div>
+</main>
+<script type="text/plain" id="tpl">/* =========================================================
+   Data & render ulasan — edit daftar REVIEWS di bawah ini.
+   Tambah / ubah / hapus objek, carousel menyesuaikan otomatis.
+   Catatan: file ini harus dimuat SEBELUM main.js.
+   ========================================================= */
+(function () {
+  "use strict";
+
+  var REVIEWS = [
+    {
+        "name": "Klara Nathania",
+        "rating": 5,
+        "text": "Pemandangannya indah dan udaranya dingin walaupun siang hari. Buat foto juga estetik. Kawahnya kebagi jadi beberapa bagian di area sini. Untuk jalannya lumayan nanjak pas di dalam saat mau melihat kawah. Love this place 💕",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Hari biasa"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Sarah Melissa",
+        "rating": 5,
+        "text": "kesini tgl 1 Mei 26\nbooking utk campervan biaya 285k weekend\nstaff nya gercep dan ramah (Top)\ndpt welcome drink (bisa pilih ada kopi/teh)\ndpt 4 tiket utk mandi di kolam privat dan foto2\nwifi bagus\ndeket spot campervan ada colokan listrik, bisa narik kabel sampai tenda\npenerangan bagus,gak gelap saat malam\nair hangat di kolam nirwana nya enak, cuma kolam agak kotor sedkit\nkamar mandi ada shower (air hangat)\nada mushola\nada semacam panggung mini bisa utk acara\nada musik dket resto, menu resto banyak, rasa juga enak, harga standar\nsuhu siang-sore 21-20°C\nsuhu sore-pagi 19-15°C\ndingin nya mantep\nair belerang di kolam mandi privat lbh panas (diberi waktu utk berendam sekitar 15menit)\nmenjual belerang jg disana\n\nsaran : disediakan keran utk cuci piring dan tempat sampah di area campervan",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Dita Aprilla",
+        "rating": 5,
+        "text": "Pengalaman seru dan baru karena bisa merasakan glamping dengan view kawah2 Kamojang.. Anak2 bisa teredukasi jg demgan pengalaman baru ini + bs ngerasain hot spring Kawah Kamojang ❤️\n\nYang lebih spesial adalah dengan adanya vendor @popotoandulu dimana kita dapet free akses untuk gratis jasa fotonya loh.. Jd ga perlu pusing2 mikirin gimana nanti mau create family foto krna sudah disediakan untuk tamu yg berkunjung dan jg tamu menginap 🤍",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Hari biasa"
+            ],
+            [
+                "Reservasi",
+                "Disarankan"
+            ]
+        ]
+    },
+    {
+        "name": "Nadira Raisya Putri",
+        "rating": 5,
+        "text": "Pengalaman yg seru sama anak2... Menambah wawasan juga... Bisa berendam air hangat...bisa berkemah,toilet bersih,ada banyak penjual makanan...tempatnya masih asri...bisa jadi alternatif wisata kl cari tempat berendam air hangat...",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Agung Rachmatullah",
+        "rating": 5,
+        "text": "Tempat yang asyik buat berkunjung di tempat wisata salah satunya di sini, menikmati alam dengan pemandangan alam yang indah diiringi dengan asap khas kawah yang memukau pemandangan, disini tersedia juga pemandian kolam air panas, jembatan gantung, dan ayunan, memang banyak fasilitas yang dapat di pakai, ayo coba dan rasakan udara dingin yang asyik.",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Hari biasa"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak yakin"
+            ]
+        ]
+    },
+    {
+        "name": "Imam Rustadi",
+        "rating": 5,
+        "text": "Wisata sumur geothermal alami.\nTidak disarankan untuk disabilitas atau manula.\nTangga lumayan curam.",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Fauzie Firdaus",
+        "rating": 5,
+        "text": "Tempatnya bagus luas,lebih aesthetic kalo lebih berkabut,ada tempat berendam air hangat juga cocok buat nenangin pikiran",
+        "meta": []
+    },
+    {
+        "name": "yusuf bachtiar",
+        "rating": 5,
+        "text": "Semakin bagus aja. Sekarang ada glampingnya, jembatan gantung dan kafenya. Semakin terkelola dengan baik.",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Hari biasa"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Nurliani Inviati",
+        "rating": 5,
+        "text": "Main kesini untuk berendam tempatnya nyaman dan weekend kesini ga serame tmpt berendam lain jd seru ada kawah nya juga disitu enak buat berenang soalnya ada kolam yg ga terlalu panas juga, aku saranin main bareng2 biar bisa ambil paket makan suki/grill barengan itu worth it dan parkiran luas, disini aku ambil paket platinum include kolam nirwana/private jacuzzi dan kawah nya + free jasa FG tp per foto kita bayar 5k buat soft file nya",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Disarankan"
+            ]
+        ]
+    },
+    {
+        "name": "Ree yanti",
+        "rating": 5,
+        "text": "Sangat menyenangkan menginap semalam disini. Pada saat check in tersedia welcome drink. Glampingnya juga nyaman dan bersih. Untuk berendam bisa di kolam nirwana dengan cafe yang buka hingga pukul 9 mlm, dengan menu beragam dan harga yang bervariatif. Atau bisa juga di kamar berendam privat yang tersedia. Pagi harinya disediakan menu nasi goreng dengan lauk ayam goreng dan telur mata sapi dan segelas teh hangat. Terdapat beberapa kawah yang bisa dijelajahi  sambil berkeliling melewati jembatan kuning dan tembus ke hutan yang terhubung dengan resto di ujung jembatan yang jadi ikon disini. Di hutan terlihat papan informasi mengenai hewan yang mendiami kawasan salah satunya ialah hewan lutung. Tersedia pula spot foto gratis bagi yang menginap yaitu di spot mobil van kuning dan di jembatan. Untuk setiap hasil jepretan foto dikenakan biaya 5rb/soft file yang bisa di ambil di resto dekat jembatan.",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Buluk Lukman",
+        "rating": 5,
+        "text": "Pengalaman yg luar biasa menginap di glorius crater Kamojang....expektasinya luar biasa dengan pemandangan alami....",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Mariani tjio",
+        "rating": 5,
+        "text": "ok, sudah tertata dengan rapih.\nTiket masuk berbayar mulai dari rp 40 rb, tergantung paket yang dipilih tapi dapat ditukarkan dengan tiket berendam dan minuman.\nAda restoran, jembatan gantung, kawah kereta api, kawah hujan, kolam rendamnya ada yang umum dan ada yang privat.\nAda glamping nya juga..\nAda juga beberapa warung makanan.",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Hari biasa"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Satria Arif",
+        "rating": 4,
+        "text": "Berawal dari iseng bertanya, digunung itu ada apa jadi berujung mampir kelokasi ini. Dari majalaya sekitar 1 jam kelokasi ini dengan perjalanan menanjak.\n\nUntuj tiket masuknya diharga 40k perorang sudah dengan mobil dan ada tambahan paket paket lainnya.\n\nAda beberapa model untuk penginapannya, ada beberapa tempat untuk berendam baik umum dan private, tempatnya bersih dan nyaman, untuk private pemandian air panasnya juga bersih terawat dan kolamnya cukup panas, dan dapat voucher untuk welcome drink dengan pilihan lecy atau strawberry.\n\nUdaranya cukup dingin sejuk, kalau kesini disarankan membawa jaket dan celana panjang, untuk signal terkadang ada dan terkadang hilang",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Hari biasa"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Dimas Kurniawan Prasetya",
+        "rating": 5,
+        "text": "D'Glorious Crater Kamojang adalah destinasi wisata yang sangat menarik, terletak di kawasan geotermal Kamojang, Jawa Barat, yang menawarkan pemandangan alam yang luar biasa dan berbagai fasilitas wisata yang menyenangkan. Kawah-kawah geotermal yang terkenal, seperti Kawah Kereta Api dan Kawah Kahuripan, memberikan pengalaman yang unik dan mengesankan. Tempat ini juga menawarkan berbagai wahana seru seperti Glory Bridge, Jungle Track, dan Crater Bridge, yang sangat Instagramable. Bagi yang ingin bersantai, tersedia kolam air panas alami yang menyegarkan.\n\nFasilitas penginapan di D'Glorious Kamojang juga sangat memadai, dengan pilihan glamping yang nyaman dan mewah, lengkap dengan balkon pribadi dan Wi-Fi. Selain itu, restoran dan kafe di sini menyajikan berbagai hidangan lezat dalam suasana yang nyaman dan tenang. Untuk tiket masuk, harga bervariasi mulai dari Rp25.000 hingga Rp110.000, tergantung pada paket yang dipilih, dengan biaya parkir yang terjangkau untuk kendaraan pribadi maupun bus.\n\nTempat ini sangat cocok untuk liburan bersama keluarga, teman, atau pasangan, menawarkan suasana yang menenangkan dan pemandangan yang memukau. Pelayanan yang ramah, fasilitas yang terawat, dan lokasi yang strategis membuat D'Glorious Crater Kamojang layak menjadi pilihan utama untuk berlibur. Selain itu, Anda juga dapat memanfaatkan jasa Popotoan, tim fotografi profesional yang siap mengabadikan momen-momen spesial selama kunjungan Anda, membuat pengalaman Anda semakin tak terlupakan. Pengalaman saya di sini benar-benar luar biasa, dan saya pasti akan kembali lagi.",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Hari biasa"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Ridnia Nur Istiqomah",
+        "rating": 4,
+        "text": "Salah satu wisata, resto serta Glamping yang ada di kota Garut.\nD'Glorious Crater Kamojang sendiri tepatnya terdapat diperbatasan antara Bandung dan Garut (CMIIW).\nDisini saya beserta keluarga menginap di Glamping tipe Kahuripan (tersedia 10 unit). Untuk per-malam nya dikenakan biaya Rp 1.000.000.\nDisini kita disediakan 1 bed ukuran besar, kamar mandi dengan hot shower serta amenity yang disediakan seperti air mineral (Amidis) serta kopi dan teh yang bisa diseduh.\nDi bagian tengah terdapat resto serta pemandian air panas (belerang) yang bisa dinikmati oleh pengunjung baik yang menginap ataupun tidak menginap.\nUntuk pemandian nya disarankan untuk dinikmati maksimal 15 menit, sambil berendam, kita juga bisa menikmati makanan dan minuman yang disediakan di restonya.\nDisini jika sore menuju ke malam sangat dingin (bisa menembus 17⁰), jadi disarankan membawa jaket, memakai celana panjang serta kaos kaki, hehe.\nPas sekali buat yang berkeinginan untuk staycation sambil healing. Cuaca dingin, area yang tenang dan dikelilingi oleh pegunungan yang beberapa titik mengeluarkan uap-uap panas dari belerang.\nDisini juga terdapat beberapa wahana seperti kawah kereta api, glory bridge, jungle bridge serta wahana bermain untuk anak-anak.\nYuk dicoba menginap disini bersama keluarga, dijamin suka...",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Disarankan"
+            ]
+        ]
+    },
+    {
+        "name": "Sukmawati Ishak",
+        "rating": 5,
+        "text": "Kami berkunjung kesini saat liburan anak sekolah dan weekday, jadi suasana tdk terlalu ramai, enak, syahdu, indah pemandangannya",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Hari biasa"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "Ihanna Dyah",
+        "rating": 5,
+        "text": "pemandangannya indah sekali, hawanya sangat sejuk dan kebersihan sarana dan prasarana yg terjaga",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Tidak perlu"
+            ]
+        ]
+    },
+    {
+        "name": "anis rengganis",
+        "rating": 5,
+        "text": "Salah satu wisata air belerang asli di garut, jalan nya sudah bagus. harga tiket mulai 40k dan ada paket yg lain, sedikit sulit sinyal, tempat yg ikonik nya DGlory bridge, kawah kereta api, ada glamping juga. Utk tempat rendam yg private room semoga makin nyaman ke depan nya. Ada cafe juga untuk beli makanan dan minuman.",
+        "meta": [
+            [
+                "Waktu kunjungan",
+                "Akhir pekan"
+            ],
+            [
+                "Waktu antrean",
+                "Tanpa mengantre"
+            ],
+            [
+                "Reservasi",
+                "Disarankan"
+            ]
+        ]
+    }
+];
+
+  var STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.85 5.78 6.38.93-4.62 4.5 1.09 6.35L12 17.36 6.3 20.36l1.09-6.35-4.62-4.5 6.38-.93z"/></svg>';
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  /* Inisial avatar diambil otomatis dari nama */
+  function initials(name) {
+    return String(name).trim().split(/\s+/).slice(0, 2).map(function (w) { return w.charAt(0); }).join("").toUpperCase() || "?";
+  }
+
+  function stars(n) {
+    var html = "";
+    for (var i = 1; i <= 5; i++) {
+      html += i <= n ? STAR : STAR.replace("<svg ", '<svg class="is-empty" ');
+    }
+    return html;
+  }
+
+  function slide(r) {
+    var meta = (r.meta || []).map(function (m) {
+      return "<li><span>" + esc(m[0]) + "</span>" + esc(m[1]) + "</li>";
+    }).join("");
+    return (
+      '<figure class="testimonial testimonial--slide">' +
+        '<span class="testimonial__mark" aria-hidden="true">&ldquo;</span>' +
+        '<div class="testimonial__stars" aria-label="' + r.rating + ' dari 5 bintang">' + stars(r.rating) + "</div>" +
+        '<blockquote class="testimonial__quote">' + esc(r.text).replace(/\n/g, "<br>") + "</blockquote>" +
+        (meta ? '<ul class="testimonial__meta">' + meta + "</ul>" : "") +
+        '<figcaption class="testimonial__author">' +
+          '<span class="testimonial__avatar" aria-hidden="true">' + esc(initials(r.name)) + "</span>" +
+          '<span class="testimonial__name">' + esc(r.name) + "</span>" +
+        "</figcaption>" +
+      "</figure>"
+    );
+  }
+
+  var track = document.querySelector("[data-reviews]");
+  if (!track) return;
+  track.innerHTML = REVIEWS.map(slide).join("");
+
+  /* Bisa dipakai bagian lain, mis. untuk menghitung rata-rata rating */
+  window.REVIEWS = REVIEWS;
+})();
+</script>
+<script>
+(function(){
+"use strict";
+var $=function(s){return document.querySelector(s)};
+var tpl=$("#tpl").textContent,items=[],base={},baseOrder="",sel=0,uid=0,KEY="reviews-editor-draft";
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function ini(n){return n.trim().split(/\s+/).slice(0,2).map(function(w){return w.charAt(0)}).join("").toUpperCase()||"?"}
+function sig(x){return JSON.stringify([x.name,x.rating,x.text,x.meta])}
+function locate(t){var m=t.indexOf("var REVIEWS = ");if(m<0)throw new Error("Daftar “var REVIEWS = [...]” tidak ditemukan di file ini.");
+  var s=t.indexOf("[",m),d=0,str=false,i=s;
+  for(;i<t.length;i++){var c=t[i];if(str){if(c==="\\")i++;else if(c==='"')str=false}else if(c==='"')str=true;else if(c==="[")d++;else if(c==="]"&&--d===0)break}
+  var raw=t.slice(s,i+1),arr;try{arr=JSON.parse(raw)}catch(e){arr=new Function("return "+raw)()}
+  return{arr:arr,s:s,e:i+1}}
+function load(text){var r=locate(text);tpl=text;uid=0;
+  items=r.arr.map(function(a){return{id:++uid,name:a.name||"",rating:a.rating||5,text:a.text||"",meta:(a.meta||[]).map(function(m){return[m[0],m[1]]})}});
+  base={};items.forEach(function(x){base[x.id]=sig(x)});baseOrder=items.map(function(x){return x.id}).join();sel=0;all()}
+function build(){var r=locate(tpl);var data=items.map(function(x){return{name:x.name.trim(),rating:x.rating,text:x.text.trim(),meta:x.meta.filter(function(m){return m[0].trim()&&m[1].trim()})}});
+  return tpl.slice(0,r.s)+JSON.stringify(data,null,4)+tpl.slice(r.e)}
+function status(x){return !(x.id in base)?"new":base[x.id]!==sig(x)?"mod":""}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({items:items,uid:uid}))}catch(e){}}
+function dirty(){var n=0;items.forEach(function(x){if(status(x))n++});return n||items.map(function(x){return x.id}).join()!==baseOrder||Object.keys(base).length!==items.filter(function(x){return x.id in base}).length}
+function chips(){var a=0,m=0;items.forEach(function(x){var s=status(x);if(s==="new")a++;else if(s==="mod")m++});
+  var del=Object.keys(base).length-items.filter(function(x){return x.id in base}).length;
+  var order=!a&&!del&&items.map(function(x){return x.id}).join()!==baseOrder;
+  var h='<span class="chip">'+items.length+' ulasan</span>';
+  h+=dirty()?'<span class="chip on">+'+a+' baru · ~'+m+' diubah · −'+del+' dihapus'+(order?' · urutan berubah':'')+'</span>':'<span class="chip ok">Tidak ada perubahan</span>';
+  $("#chips").innerHTML=h}
+function list(){var q=$("#q").value.toLowerCase(),h="";
+  items.forEach(function(x,i){if(q&&(x.name+x.text).toLowerCase().indexOf(q)<0)return;var s=status(x);
+    h+='<li data-i="'+i+'" class="'+(i===sel?"sel":"")+'"><span class="av">'+esc(ini(x.name))+'</span><span class="nm"><b>'+esc(x.name||"(tanpa nama)")+(s?'<span class="tag '+(s==="new"?"new":"")+'">'+(s==="new"?"baru":"diubah")+'</span>':"")+'</b><span>'+"★".repeat(x.rating)+'</span></span><span class="acts">'
+    +'<button class="btn btn--sm" data-a="up" title="Naik">↑</button><button class="btn btn--sm" data-a="dn" title="Turun">↓</button><button class="btn btn--sm" data-a="dup" title="Duplikat">⧉</button><button class="btn btn--sm" data-a="del" title="Hapus">✕</button></span></li>'});
+  $("#list").innerHTML=h||'<li style="cursor:default;color:#5a6b78">Tidak ada hasil.</li>'}
+function pv(){var x=items[sel];if(!x){$("#pv").innerHTML="";return}
+  var st="";for(var i=1;i<=5;i++)st+=i<=x.rating?"★":"<i>★</i>";
+  var m=x.meta.filter(function(m){return m[0]&&m[1]}).map(function(m){return"<li><span>"+esc(m[0])+"</span>"+esc(m[1])+"</li>"}).join("");
+  $("#pv").innerHTML='<div class="card"><span class="mk">&ldquo;</span><div class="st">'+st+'</div><p>'+esc(x.text).replace(/\n/g,"<br>")+'</p>'+(m?"<ul>"+m+"</ul>":"")+'<footer><span class="av">'+esc(ini(x.name))+'</span><span><b>'+esc(x.name)+'</b></span></footer></div>'}
+function metaHtml(x){return x.meta.map(function(m,i){return'<div class="mrow"><input type="text" data-m="'+i+'.0" value="'+esc(m[0])+'" placeholder="Label"><input type="text" data-m="'+i+'.1" value="'+esc(m[1])+'" placeholder="Nilai"><button class="btn btn--sm" data-rm="'+i+'">✕</button></div>'}).join("")}
+function form(){var x=items[sel];if(!x){$("#form").innerHTML="<p>Belum ada ulasan. Klik <b>+ Tambah</b>.</p>";return}
+  var st="";for(var i=1;i<=5;i++)st+='<button type="button" data-r="'+i+'" class="'+(i<=x.rating?"on":"")+'" aria-label="'+i+' bintang">★</button>';
+  $("#form").innerHTML='<label>Nama</label><input type="text" data-f="name" value="'+esc(x.name)+'">'
+  +'<label>Rating</label><div class="stars">'+st+'</div>'
+  +'<label>Isi ulasan <span class="cnt" id="cnt">'+x.text.length+' karakter</span></label><textarea rows="7" data-f="text">'+esc(x.text)+'</textarea>'
+  +'<label>Rincian kunjungan (opsional)</label><div id="metas">'+metaHtml(x)+'</div><button class="btn btn--sm" id="addMeta">+ Rincian</button><div class="err" id="err"></div>'}
+function all(){chips();list();form();pv();save()}
+function refresh(){chips();list();pv();save()}
+$("#form").addEventListener("input",function(e){var x=items[sel],t=e.target;
+  if(t.dataset.f){x[t.dataset.f]=t.value;if(t.dataset.f==="text")$("#cnt").textContent=t.value.length+" karakter"}
+  else if(t.dataset.m){var p=t.dataset.m.split(".");x.meta[+p[0]][+p[1]]=t.value}refresh()});
+$("#form").addEventListener("click",function(e){var t=e.target.closest("button");if(!t)return;var x=items[sel];
+  if(t.dataset.r){x.rating=+t.dataset.r;form();refresh()}
+  else if(t.id==="addMeta"){x.meta.push(["",""]);$("#metas").innerHTML=metaHtml(x)}
+  else if(t.dataset.rm){x.meta.splice(+t.dataset.rm,1);$("#metas").innerHTML=metaHtml(x);refresh()}});
+$("#list").addEventListener("click",function(e){var li=e.target.closest("li[data-i]");if(!li)return;var i=+li.dataset.i,b=e.target.closest("button"),a=b&&b.dataset.a;
+  if(a==="up"&&i>0){var t=items[i];items[i]=items[i-1];items[i-1]=t;sel=i-1}
+  else if(a==="dn"&&i<items.length-1){var t2=items[i];items[i]=items[i+1];items[i+1]=t2;sel=i+1}
+  else if(a==="dup"){var c=JSON.parse(JSON.stringify(items[i]));c.id=++uid;items.splice(i+1,0,c);sel=i+1}
+  else if(a==="del"){if(!confirm("Hapus ulasan “"+(items[i].name||"tanpa nama")+"”?"))return;items.splice(i,1);sel=Math.max(0,Math.min(sel,items.length-1))}
+  else sel=i;all()});
+$("#q").addEventListener("input",list);
+$("#add").addEventListener("click",function(){items.unshift({id:++uid,name:"",rating:5,text:"",meta:[]});sel=0;$("#q").value="";all();$('[data-f="name"]').focus()});
+function validate(){for(var i=0;i<items.length;i++){var x=items[i],m=!x.name.trim()?"Nama":!x.text.trim()?"Isi ulasan":"";
+  if(m){sel=i;all();$("#err").textContent="⚠ "+m+" wajib diisi sebelum diekspor.";return false}}return true}
+$("#btnDl").addEventListener("click",function(){if(!validate())return;var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([build()],{type:"text/javascript"}));a.download="reviews.js";a.click();URL.revokeObjectURL(a.href)});
+$("#btnCopy").addEventListener("click",function(){if(!validate())return;var t=build(),b=this;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent="Tersalin ✓"},function(){var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();b.textContent="Tersalin ✓"});setTimeout(function(){b.textContent="Salin kode"},1800)});
+$("#btnImport").addEventListener("click",function(){$("#file").click()});
+$("#file").addEventListener("change",function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{load(r.result)}catch(e){alert(e.message)}};r.readAsText(f);this.value=""});
+window.addEventListener("beforeunload",function(e){if(dirty()){e.preventDefault();e.returnValue=""}});
+load(tpl);
+try{var d=JSON.parse(localStorage.getItem(KEY)||"null");
+  if(d&&d.items&&d.items.length&&JSON.stringify(d.items.map(sig))!==JSON.stringify(items.map(sig))){$("#draft").style.display="block";
+    $("#dRestore").onclick=function(){items=d.items;uid=Math.max(uid,d.uid||0);sel=0;$("#draft").style.display="none";all()};
+    $("#dDrop").onclick=function(){$("#draft").style.display="none";save()}}}catch(e){}
+})();
+</script>
+</body>
+</html>

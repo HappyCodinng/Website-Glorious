@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri — d'Glorious Crater Kamojang</title>
+  <meta name="description" content="Galeri foto dan video d'Glorious Crater Kamojang: pemandangan alam, akomodasi, aktivitas, dan momen indah di Kamojang.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=optional" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <a class="brand" href="index.html" aria-label="d'Glorious Crater Kamojang">
+        <img class="brand__logo" src="assets/img/logo.png" alt="d'Glorious Crater Kamojang">
+        <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+      </a>
+
+      <span class="header__spacer" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <div class="navpanel-backdrop" id="navBackdrop" hidden></div>
+  <nav class="navpanel" id="primaryNav" aria-label="Menu utama">
+    <div class="navpanel__head">
+      <span class="navpanel__title">Menu</span>
+      <button class="navpanel__close" id="navClose" type="button" aria-label="Tutup menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="nav__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Penginapan">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Penginapan</span>
+      </a></li>
+      <li><a href="kontak.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- Navigasi bawah (layar kecil) -->
+  <nav class="bottombar" aria-label="Menu utama ponsel">
+    <ul class="bottombar__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Penginapan">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Penginapan</span>
+      </a></li>
+      <li><a href="kontak.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero page-hero--media page-hero--fullpc">
+      <div class="page-hero__media"><img data-img="page-galeri" src="assets/img/page-galeri.jpg" alt="Galeri d'Glorious Crater Kamojang"></div>
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Galeri</span></nav>
+        <p class="eyebrow">Galeri</p>
+        <h1>Foto &amp; Video</h1>
+        <p>Kumpulan momen dan keindahan alam d'Glorious Crater Kamojang. Klik untuk melihat lebih besar.</p>
+      </div>
+    </section>
+
+    <!-- ================= GALERI ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="filter" data-reveal>
+          <button class="is-active" data-filter="all">Semua</button>
+          <button data-filter="alam">Alam</button>
+          <button data-filter="akomodasi">Penginapan</button>
+          <button data-filter="aktivitas">Aktivitas</button>
+          <button data-filter="video">Video</button>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item ratio-4x3" data-category="alam" data-type="image" data-img="gal-1" data-src="assets/img/gal-1.jpg" data-caption="Pemandangan kawah Kamojang di pagi hari" data-reveal>
+            <div class="media ratio-4x3"><img data-img="gal-1" src="assets/img/gal-1.jpg" alt="Pemandangan kawah Kamojang"></div>
+            <div class="gallery-item__overlay"><span>Pemandangan kawah Kamojang</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="akomodasi" data-type="image" data-img="gal-2" data-src="assets/img/gal-2.jpg" data-caption="Glamping Kahuripan di tengah alam" data-reveal data-reveal-delay="1">
+            <div class="media ratio-4x3"><img data-img="gal-2" src="assets/img/gal-2.jpg" alt="Glamping Kahuripan"></div>
+            <div class="gallery-item__overlay"><span>Glamping Kahuripan</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="aktivitas" data-type="image" data-img="gal-3" data-src="assets/img/gal-3.jpg" data-caption="Api unggun dan jagung bakar" data-reveal data-reveal-delay="2">
+            <div class="media ratio-4x3"><img data-img="gal-3" src="assets/img/gal-3.jpg" alt="Api unggun"></div>
+            <div class="gallery-item__overlay"><span>Api unggun malam hari</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="alam" data-type="image" data-img="gal-4" data-src="assets/img/gal-4.jpg" data-caption="Suasana alam Kamojang" data-reveal>
+            <div class="media ratio-4x3"><img data-img="gal-4" src="assets/img/gal-4.jpg" alt="Suasana alam Kamojang"></div>
+            <div class="gallery-item__overlay"><span>Suasana alam</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3 gallery-item--video" data-category="video" data-type="video" data-video="video-1" data-src="assets/video/video-1.mp4" data-caption="Video suasana Kamojang" data-reveal data-reveal-delay="1">
+            <div class="media ratio-4x3"><img data-img="video-thumb-1" src="assets/img/video-thumb-1.jpg" alt="Video suasana Kamojang"></div>
+            <div class="gallery-item__overlay">
+              <span class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="akomodasi" data-type="image" data-img="gal-5" data-src="assets/img/gal-5.jpg" data-caption="Tenda glamping" data-reveal data-reveal-delay="2">
+            <div class="media ratio-4x3"><img data-img="gal-5" src="assets/img/gal-5.jpg" alt="Tenda glamping"></div>
+            <div class="gallery-item__overlay"><span>Glamping</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="aktivitas" data-type="image" data-img="gal-6" data-src="assets/img/gal-6.jpg" data-caption="Berendam air panas alami" data-reveal>
+            <div class="media ratio-4x3"><img data-img="gal-6" src="assets/img/gal-6.jpg" alt="Air panas alami"></div>
+            <div class="gallery-item__overlay"><span>Pemandian air panas</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="alam" data-type="image" data-img="gal-7" data-src="assets/img/gal-7.jpg" data-caption="Matahari terbit di Kamojang" data-reveal data-reveal-delay="1">
+            <div class="media ratio-4x3"><img data-img="gal-7" src="assets/img/gal-7.jpg" alt="Matahari terbit"></div>
+            <div class="gallery-item__overlay"><span>Sunrise Kamojang</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3 gallery-item--video" data-category="video" data-type="video" data-video="video-2" data-src="assets/video/video-2.mp4" data-caption="Video aktivitas guided walk" data-reveal data-reveal-delay="2">
+            <div class="media ratio-4x3"><img data-img="video-thumb-2" src="assets/img/video-thumb-2.jpg" alt="Video guided walk"></div>
+            <div class="gallery-item__overlay">
+              <span class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="akomodasi" data-type="image" data-img="gal-8" data-src="assets/img/gal-8.jpg" data-caption="Kamar lodge keluarga" data-reveal>
+            <div class="media ratio-4x3"><img data-img="gal-8" src="assets/img/gal-8.jpg" alt="Kamar lodge"></div>
+            <div class="gallery-item__overlay"><span>Lodge keluarga</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="aktivitas" data-type="image" data-img="gal-9" data-src="assets/img/gal-9.jpg" data-caption="Guided walk di hutan" data-reveal data-reveal-delay="1">
+            <div class="media ratio-4x3"><img data-img="gal-9" src="assets/img/gal-9.jpg" alt="Guided walk"></div>
+            <div class="gallery-item__overlay"><span>Guided walk</span></div>
+          </div>
+          <div class="gallery-item ratio-4x3" data-category="alam" data-type="image" data-img="gal-10" data-src="assets/img/gal-10.jpg" data-caption="Kepulan panas bumi kawah" data-reveal data-reveal-delay="2">
+            <div class="media ratio-4x3"><img data-img="gal-10" src="assets/img/gal-10.jpg" alt="Kepulan panas bumi"></div>
+            <div class="gallery-item__overlay"><span>Panas bumi</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+          <p>Penginapan alam &amp; glamping di ketinggian 1.730 mdpl kawasan Kamojang. LETS CREATE A GLORIOUS MOMENT.</p>
+          <div class="socials">
+            <a data-instagram href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a data-facebook href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.2c0-.9.3-1.5 1.6-1.5H16.5V5.1C16.2 5 15.3 5 14.3 5c-2 0-3.4 1.2-3.4 3.5V11H8.5v3h2.4v7z"/></svg></a>
+            <a data-wa href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 0 1 0 16.4 8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.3c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year></span> d'Glorious Crater Kamojang. Seluruh hak cipta dilindungi.</span>
+        <span>Mekarwangi &middot; Ibun &middot; Bandung &middot; Jawa Barat</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau galeri">
+    <button class="lightbox__close" aria-label="Tutup"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="lightbox__nav lightbox__nav--prev" aria-label="Sebelumnya"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <div class="lightbox__content"></div>
+    <button class="lightbox__nav lightbox__nav--next" aria-label="Berikutnya"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+    <p class="lightbox__caption"></p>
+  </div>
+
+  
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal — d'Glorious Crater Kamojang</title>
+  <meta name="description" content="Jadwal ketersediaan penginapan d'Glorious Crater Kamojang: cek tanggal yang masih kosong sebelum memesan.">
+  <meta property="og:title" content="d'Glorious Crater Kamojang">
+  <meta property="og:description" content="LETS CREATE A GLORIOUS MOMENT — menginap di tengah sejuknya alam Kamojang.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://app.rengganiscampsite.id">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=optional" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header is-static" id="siteHeader">
+    <div class="container header__inner">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <a class="brand" href="index.html" aria-label="d'Glorious Crater Kamojang">
+        <img class="brand__logo" src="assets/img/logo.png" alt="d'Glorious Crater Kamojang">
+        <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+      </a>
+
+      <ul class="nav__list header__nav"><li><a href="index.html">Beranda</a></li><li><a href="akomodasi.html">Penginapan</a></li><li><a href="jadwal.html" class="is-active" aria-current="page">Jadwal</a></li><li><a href="reservasi.html">Reservasi</a></li></ul>
+    </div>
+  </header>
+
+  <div class="navpanel-backdrop" id="navBackdrop" hidden></div>
+  <nav class="navpanel" id="primaryNav" aria-label="Menu utama">
+    <div class="navpanel__head">
+      <span class="navpanel__title">Menu</span>
+      <button class="navpanel__close" id="navClose" type="button" aria-label="Tutup menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="nav__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Penginapan">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Penginapan</span>
+      </a></li>
+      <li><a href="jadwal.html" aria-label="Jadwal" class="is-active" aria-current="page">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+        <span>Jadwal</span>
+      </a></li>
+      <li><a href="reservasi.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  
+  <!-- Navigasi bawah (layar kecil) -->
+  <nav class="bottombar" aria-label="Menu utama ponsel">
+    <ul class="bottombar__list">
+      <li><a href="index.html" aria-label="Beranda">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
+        <span>Beranda</span>
+      </a></li>
+      <li><a href="akomodasi.html" aria-label="Penginapan">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>Penginapan</span>
+      </a></li>
+      <li><a href="jadwal.html" aria-label="Jadwal" class="is-active" aria-current="page">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+        <span>Jadwal</span>
+      </a></li>
+      <li><a href="reservasi.html" aria-label="Reservasi">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><path d="m9.5 15.5 1.8 1.8 3.4-3.6"/></svg>
+        <span>Reservasi</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Beranda</a><span>/</span><span>Jadwal</span></nav>
+        <p class="eyebrow">Jadwal</p>
+        <h1>Cek Ketersediaan Kamar</h1>
+        <p>Lihat tanggal yang masih tersedia untuk setiap penginapan, lalu lanjut ke Reservasi untuk memesan.</p>
+      </div>
+    </section>
+
+    <!-- ================= FORM RESERVASI (EMBED) ================= -->
+    <section class="section section--cream reserve" id="jadwal">
+      <div class="container">
+        <div class="reserve__frame" id="scheduleFrame">
+          <div class="reserve__loading" aria-hidden="true"><span class="reserve__spinner"></span>Memuat jadwal ketersediaan…</div>
+          <iframe
+            class="reserve__iframe"
+            src="https://app.rengganiscampsite.id/embed/availability?store_id=c519ea4e-b029-4e81-8673-c4f58b07fc95"
+            title="Jadwal ketersediaan d'Glorious Crater Kamojang"
+            allow="payment"
+            referrerpolicy="strict-origin-when-cross-origin"
+            onload="this.parentNode.classList.add('is-loaded')"></iframe>
+        </div>
+        <p class="reserve__note">
+          Jadwal tidak tampil?
+          <a href="https://app.rengganiscampsite.id/embed/availability?store_id=c519ea4e-b029-4e81-8673-c4f58b07fc95" target="_blank" rel="noopener">Buka di tab baru &rarr;</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="brand__wordmark">d'Glorious<span>Crater Kamojang</span></span>
+          <p>Penginapan alam &amp; glamping di ketinggian 1.730 mdpl kawasan Kamojang. LETS CREATE A GLORIOUS MOMENT.</p>
+          <div class="socials">
+            <a data-instagram href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a data-facebook href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7h2.3l.4-3h-2.7V9.2c0-.9.3-1.5 1.6-1.5H16.5V5.1C16.2 5 15.3 5 14.3 5c-2 0-3.4 1.2-3.4 3.5V11H8.5v3h2.4v7z"/></svg></a>
+            <a data-wa href="#" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 0 1 0 16.4 8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.3c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.6-.8c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.3-1.2-1.5-.1-.2 0-.3.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Lokasi</h4>
+          <div class="footer__map">
+            <iframe data-maps-embed title="Peta lokasi d'Glorious Crater Kamojang" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <a class="footer__map-link" data-maps-directions href="#">Petunjuk Arah &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year></span> d'Glorious Crater Kamojang. Seluruh hak cipta dilindungi.</span>
+        <span>Mekarwangi &middot; Ibun &middot; Bandung &middot; Jawa Barat</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header-scroll.js"></script>
+</body>
+</html>
